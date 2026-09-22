@@ -202,8 +202,11 @@ export function AppShell() {
             <h1 className="font-serif text-xl leading-tight text-[#f0e6d4] md:text-3xl">
               The Shadow of the Wind
             </h1>
-            <p className="mt-0.5 hidden text-sm text-[#c4b49a] sm:block">
-              Later streets stay off the map.
+            <p className="mt-0.5 text-xs text-[#c4b49a] sm:text-sm">
+              Mapped by Alexander Kononov
+              <span className="hidden sm:inline">
+                {" · "}Later streets stay off the map.
+              </span>
             </p>
           </div>
           <ProgressControl
