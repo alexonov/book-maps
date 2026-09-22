@@ -4,42 +4,48 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import type { Chapter, Character, Location } from "@/data/types";
+import type { Beat, Chapter, Character, Location } from "@/data/types";
+import { beatById, chapterById } from "@/lib/beats";
 import { MARKER_LABELS } from "@/lib/markers";
-import { chapterById, notesForProgress } from "@/lib/spoiler";
+import { notesForProgress } from "@/lib/spoiler";
 import { ExternalLink, MapPin, X } from "lucide-react";
 
 type InspectorProps = {
   location: Location | null;
+  beats: Beat[];
   chapters: Chapter[];
   characters: Character[];
-  progressId: string;
+  noteProgressId: string;
   currentSynopsis: string;
   visibleCount: number;
+  isCurrent: boolean;
+  walkBack: boolean;
   onClear: () => void;
+  onMarkHere: (locationId: string) => void;
 };
 
 export function Inspector({
   location,
+  beats,
   chapters,
   characters,
-  progressId,
+  noteProgressId,
   currentSynopsis,
   visibleCount,
+  isCurrent,
+  walkBack,
   onClear,
+  onMarkHere,
 }: InspectorProps) {
   if (!location) {
     return (
       <div className="flex h-full flex-col gap-4 p-5">
-        <p className="text-[0.68rem] tracking-[0.28em] text-[#c4a574] uppercase">
-          Inspector
-        </p>
         <h2 className="font-serif text-2xl leading-snug text-[#f0e6d4]">
           Choose a pin
         </h2>
         <p className="text-sm leading-relaxed text-[#c4b49a]">
-          Nothing beyond your selected chapter is on this map — not greyed out,
-          not hinted at. {visibleCount}{" "}
+          Nothing beyond this moment is on the map — not greyed out, not hinted
+          at. {visibleCount}{" "}
           {visibleCount === 1 ? "place is" : "places are"} known to you so far.
         </p>
         <Separator className="bg-[#c4a574]/20" />
@@ -50,11 +56,14 @@ export function Inspector({
     );
   }
 
-  const revealedAt = chapterById(chapters, location.revealedIn);
+  const revealedAt = beatById(beats, location.revealedIn);
+  const revealedChapter = revealedAt
+    ? chapterById(chapters, revealedAt.chapterId)
+    : undefined;
   const visiblePeople = characters.filter((character) =>
     location.characterIds.includes(character.id),
   );
-  const extraNotes = notesForProgress(location, chapters, progressId);
+  const extraNotes = notesForProgress(location, beats, noteProgressId);
 
   return (
     <ScrollArea className="h-full">
@@ -102,10 +111,12 @@ export function Inspector({
           {location.background ? (
             <Badge variant="secondary">Background</Badge>
           ) : null}
-          {location.activeIn.includes(progressId) ? (
+          {isCurrent ? (
             <Badge>Current setting</Badge>
           ) : (
-            <Badge variant="secondary">Visited</Badge>
+            <Badge variant="secondary">
+              {walkBack ? "As of that visit" : "Visited"}
+            </Badge>
           )}
         </div>
 
@@ -131,6 +142,17 @@ export function Inspector({
           </ul>
         ) : null}
 
+        {!walkBack && !isCurrent ? (
+          <Button
+            size="sm"
+            variant="outline"
+            className="self-start border-[#c4a574]/40 text-[#e8c989]"
+            onClick={() => onMarkHere(location.id)}
+          >
+            I am here
+          </Button>
+        ) : null}
+
         <Separator className="bg-[#c4a574]/20" />
 
         <div>
@@ -139,8 +161,8 @@ export function Inspector({
           </p>
           <p className="mt-1 text-sm text-[#e4d5b8]">
             {revealedAt
-              ? `${revealedAt.part} — ${revealedAt.title}`
-              : "Unknown chapter"}
+              ? `${revealedChapter?.part ?? ""} — ${revealedAt.title}`
+              : "Unknown moment"}
           </p>
         </div>
 

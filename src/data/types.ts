@@ -29,9 +29,22 @@ export type Chapter = {
   synopsis: string;
 };
 
-export type ChapterNote = {
-  /** Chapter at which this extra sentence becomes safe to show. */
+export type Beat = {
+  id: string;
+  order: number;
   chapterId: string;
+  /** Spoiler-safe title, shown only after this beat is reached. */
+  title: string;
+  placeLabel: string;
+  moodLabel: string;
+  yearLabel: string;
+  currentLocationId: string;
+  synopsis: string;
+};
+
+export type BeatNote = {
+  /** Beat at which this extra sentence becomes safe to show. */
+  beatId: string;
   text: string;
 };
 
@@ -41,13 +54,13 @@ export type Location = {
   type: MarkerType;
   lat: number;
   lng: number;
-  /** First chapter in which this place may appear. */
+  /** First beat in which this place may appear. */
   revealedIn: string;
-  /** Chapters where this place is the scene of the action. */
+  /** Beats where this place is the scene of the action. */
   activeIn: string[];
   characterIds: string[];
   blurb: string;
-  notesByChapter?: ChapterNote[];
+  notesByBeat?: BeatNote[];
   address?: string;
   neighborhood?: string;
   fictional: boolean;
@@ -81,6 +94,7 @@ export type BookCatalog = {
     originalTitle: string;
   };
   chapters: Chapter[];
+  beats: Beat[];
   locations: Location[];
   journeys: Journey[];
   characters: Character[];

@@ -3,11 +3,12 @@
 import { useEffect, useState, type ComponentType } from "react";
 import type { Journey, Location } from "@/data/types";
 
-type BookMapViewProps = {
+export type BookMapViewProps = {
   locations: Location[];
   journeys: Journey[];
   selectedId: string | null;
-  currentChapterId: string;
+  focusLocationId: string | null;
+  walkBack: boolean;
   onSelect: (id: string) => void;
 };
 
@@ -34,7 +35,7 @@ export function BookMapView(props: BookMapViewProps) {
       })
       .catch(() => {
         if (!cancelled) {
-          setError("The map failed to load. Refresh the page to try again.");
+          setError("These streets will not load. Your place is still marked.");
         }
       });
     return () => {

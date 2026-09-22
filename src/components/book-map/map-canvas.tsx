@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import {
   MapContainer,
   Marker,
@@ -11,57 +11,85 @@ import {
 } from "react-leaflet";
 import L from "leaflet";
 import { BARCELONA_CENTER } from "@/data";
-import type { Journey, Location } from "@/data/types";
+import type { Location } from "@/data/types";
 import { MARKER_SYMBOLS } from "@/lib/markers";
+import type { BookMapViewProps } from "@/components/book-map/map-view";
 
-type MapCanvasProps = {
-  locations: Location[];
-  journeys: Journey[];
-  selectedId: string | null;
-  currentChapterId: string;
-  onSelect: (id: string) => void;
-};
-
-function FitToStory({
-  locations,
-  journeys,
+function FlyToFocus({
+  location,
 }: {
-  locations: Location[];
-  journeys: Journey[];
+  location: Location | null;
 }) {
   const map = useMap();
+  const first = useRef(true);
+  const lastId = useRef<string>("");
+  const hadSize = useRef(false);
+  const focusId = location?.id ?? "";
 
   useEffect(() => {
-    const points: L.LatLngExpression[] = locations.map((location) => [
-      location.lat,
-      location.lng,
-    ]);
-    for (const journey of journeys) {
-      for (const point of journey.path) {
-        points.push([point.lat, point.lng]);
+    function frame(target: Location | null, animate: boolean) {
+      map.invalidateSize();
+      if (!target) {
+        map.setView([BARCELONA_CENTER.lat, BARCELONA_CENTER.lng], 15, {
+          animate: false,
+        });
+        return;
       }
+
+      const dest: L.LatLngExpression = [target.lat, target.lng];
+      const reduce =
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!animate || reduce) {
+        map.setView(dest, 16, { animate: false });
+        return;
+      }
+
+      map.flyTo(dest, 16, { duration: 0.85 });
     }
-    if (points.length === 0) {
-      map.setView([BARCELONA_CENTER.lat, BARCELONA_CENTER.lng], 15);
-      return;
-    }
-    map.fitBounds(L.latLngBounds(points), {
-      padding: [48, 48],
-      maxZoom: 16,
-      animate: true,
+
+    const frameId = window.requestAnimationFrame(() => {
+      const shouldAnimate = !first.current && lastId.current !== focusId;
+      first.current = false;
+      lastId.current = focusId;
+      frame(location, shouldAnimate);
     });
-  }, [journeys, locations, map]);
+
+    const container = map.getContainer();
+    const observer = new ResizeObserver(() => {
+      const ready = container.clientWidth > 0 && container.clientHeight > 0;
+      map.invalidateSize();
+      if (ready && !hadSize.current) {
+        hadSize.current = true;
+        frame(location, false);
+      }
+    });
+    observer.observe(container);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      observer.disconnect();
+    };
+  }, [focusId, location, map]);
 
   return null;
 }
 
-function markerIcon(location: Location, selected: boolean, current: boolean) {
+function markerIcon(
+  location: Location,
+  selected: boolean,
+  current: boolean,
+  walkBack: boolean,
+) {
   const symbol = MARKER_SYMBOLS[location.type];
   const classes = [
     "bm-marker",
     `bm-marker--${location.type}`,
     selected ? "is-selected" : "",
     current ? "is-current" : "",
+    walkBack ? "is-walkback" : "",
+    location.activeIn.length > 0 ? "is-scene" : "",
     location.background ? "is-background" : "",
   ]
     .filter(Boolean)
@@ -80,9 +108,12 @@ export default function MapCanvas({
   locations,
   journeys,
   selectedId,
-  currentChapterId,
+  focusLocationId,
+  walkBack,
   onSelect,
-}: MapCanvasProps) {
+}: BookMapViewProps) {
+  const focus = locations.find((location) => location.id === focusLocationId) ?? null;
+
   const icons = useMemo(() => {
     const next = new Map<string, L.DivIcon>();
     for (const location of locations) {
@@ -91,18 +122,19 @@ export default function MapCanvas({
         markerIcon(
           location,
           location.id === selectedId,
-          location.activeIn.includes(currentChapterId),
+          !walkBack && location.id === focusLocationId,
+          walkBack,
         ),
       );
     }
     return next;
-  }, [currentChapterId, locations, selectedId]);
+  }, [focusLocationId, locations, selectedId, walkBack]);
 
   return (
     <MapContainer
       center={[BARCELONA_CENTER.lat, BARCELONA_CENTER.lng]}
       zoom={15}
-      className="book-map h-full w-full"
+      className={`book-map h-full w-full${walkBack ? " is-walkback" : ""}`}
       zoomControl={false}
       attributionControl
       scrollWheelZoom
@@ -117,9 +149,9 @@ export default function MapCanvas({
           key={journey.id}
           positions={journey.path.map((point) => [point.lat, point.lng])}
           pathOptions={{
-            color: "#e4c27a",
-            weight: 4,
-            opacity: 0.95,
+            color: walkBack ? "#f0e6d4" : "#e4c27a",
+            weight: walkBack ? 5 : 4,
+            opacity: walkBack ? 1 : 0.95,
             dashArray: "7 9",
           }}
         />
@@ -132,7 +164,7 @@ export default function MapCanvas({
           zIndexOffset={
             location.id === selectedId
               ? 1000
-              : location.activeIn.includes(currentChapterId)
+              : location.id === focusLocationId
                 ? 400
                 : 0
           }
@@ -141,7 +173,7 @@ export default function MapCanvas({
           }}
         />
       ))}
-      <FitToStory locations={locations} journeys={journeys} />
+      <FlyToFocus location={focus} />
     </MapContainer>
   );
 }

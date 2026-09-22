@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Cinzel, Cormorant_Garamond, Source_Serif_4 } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -27,7 +28,11 @@ export const metadata: Metadata = {
     "A spoiler-free interactive map of Barcelona for readers of Carlos Ruiz Zafón’s The Shadow of the Wind.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: ReactNode;
+}>) {
   return (
     <html
       lang="en"

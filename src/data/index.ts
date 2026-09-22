@@ -1,4 +1,5 @@
 import type {
+  Beat,
   BookCatalog,
   Chapter,
   Character,
@@ -6,6 +7,7 @@ import type {
   Location,
 } from "@/data/types";
 import chapters from "@/data/chapters.json";
+import beats from "@/data/beats.json";
 import locations from "@/data/locations.json";
 import journeys from "@/data/journeys.json";
 import characters from "@/data/characters.json";
@@ -17,6 +19,7 @@ export const catalog: BookCatalog = {
     originalTitle: "La sombra del viento",
   },
   chapters: chapters as Chapter[],
+  beats: beats as Beat[],
   locations: locations as Location[],
   journeys: journeys as Journey[],
   characters: characters as Character[],

@@ -235,3 +235,25 @@
     0 0 0 2px #120e0b,
     0 0 0 5px #f0e6d4;
 }
+
+.bm-marker.is-walkback.is-scene .bm-marker-core {
+  box-shadow: 0 0 0 1px #c4a574, 0 0 12px rgb(196 165 116 / 40%);
+}
+
+.bm-marker.is-walkback.is-background .bm-marker-core {
+  opacity: 0.45;
+}
+
+.progress-chip {
+  box-shadow: inset 0 1px 0 rgb(232 201 137 / 12%);
+}
+
+.progress-chip:hover {
+  border-color: rgb(196 165 116 / 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bm-marker.is-selected .bm-marker-core {
+    transform: none;
+  }
+}

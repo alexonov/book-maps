@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { CharacterFilters } from "@/components/book-map/character-filters";
 import { Inspector } from "@/components/book-map/inspector";
 import { MapLegend } from "@/components/book-map/legend";
@@ -11,56 +11,76 @@ import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Switch } from "@/components/ui/switch";
 import { catalog } from "@/data";
 import {
+  beatAfterSteps,
+  beatById,
+  beatOrder,
+  lastBeatForChapter,
+  remainingSteps,
+  visitBeatId,
+} from "@/lib/beats";
+import {
   getProgress,
   getServerProgress,
   saveProgress,
   subscribeProgress,
+  type ProgressState,
 } from "@/lib/progress";
 import {
-  chapterById,
   visibleCharacters,
   visibleJourneys,
   visibleLocations,
 } from "@/lib/spoiler";
 import { PanelRight } from "lucide-react";
 
-const DEFAULT_CHAPTER = catalog.chapters[0]?.id ?? "cemetery";
+const DEFAULT_BEAT = catalog.beats[0]?.id ?? "dawn-santa-anna";
 
 export function AppShell() {
-  const storedProgress = useSyncExternalStore(
+  const stored = useSyncExternalStore(
     subscribeProgress,
-    () => getProgress(DEFAULT_CHAPTER),
-    () => getServerProgress(DEFAULT_CHAPTER),
+    () => getProgress(catalog.beats, catalog.chapters, DEFAULT_BEAT),
+    () => getServerProgress(DEFAULT_BEAT),
   );
-  const progressId = catalog.chapters.some(
-    (chapter) => chapter.id === storedProgress,
-  )
-    ? storedProgress
-    : DEFAULT_CHAPTER;
+
+  const { progressId, furthestId } = stored;
+  const currentBeat = beatById(catalog.beats, progressId) ?? catalog.beats[0];
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [hereId, setHereId] = useState<string | null>(null);
+  const [walkBack, setWalkBack] = useState(false);
+  const [undoState, setUndoState] = useState<ProgressState | null>(null);
   const [characterIds, setCharacterIds] = useState<string[]>([]);
   const [showBackground, setShowBackground] = useState(true);
   const [showRoutes, setShowRoutes] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [progressOpen, setProgressOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 1023px)");
+    const sync = () => {
+      setIsMobile(media.matches);
+      if (!media.matches) setMobileOpen(false);
+    };
+    sync();
+    media.addEventListener("change", sync);
+    return () => media.removeEventListener("change", sync);
+  }, []);
 
   const people = useMemo(
-    () => visibleCharacters(catalog.chapters, catalog.characters, progressId),
+    () => visibleCharacters(catalog.beats, catalog.characters, progressId),
     [progressId],
   );
 
   const activeCharacterIds = useMemo(
     () =>
-      characterIds.filter((id) =>
-        people.some((person) => person.id === id),
-      ),
+      characterIds.filter((id) => people.some((person) => person.id === id)),
     [characterIds, people],
   );
 
   const places = useMemo(
     () =>
-      visibleLocations(catalog.chapters, catalog.locations, progressId, {
+      visibleLocations(catalog.beats, catalog.locations, progressId, {
         showBackground,
         characterIds: activeCharacterIds,
       }),
@@ -69,7 +89,7 @@ export function AppShell() {
 
   const routes = useMemo(
     () =>
-      visibleJourneys(catalog.chapters, catalog.journeys, progressId, {
+      visibleJourneys(catalog.beats, catalog.journeys, progressId, {
         showRoutes,
         characterIds: activeCharacterIds,
       }),
@@ -77,30 +97,104 @@ export function AppShell() {
   );
 
   const selected = places.find((place) => place.id === selectedId) ?? null;
-  const current = chapterById(catalog.chapters, progressId);
+  const focusLocationId = hereId ?? currentBeat?.currentLocationId ?? null;
   const filterActive = activeCharacterIds.length > 0;
+  const canAdvance = remainingSteps(catalog.beats, furthestId) > 0;
+  const noteProgressId = walkBack && selected
+    ? visitBeatId(selected, catalog.beats, progressId)
+    : progressId;
+
+  function commit(
+    next: ProgressState,
+    recordUndo: boolean,
+    nextWalkBack = false,
+  ) {
+    if (recordUndo) setUndoState({ progressId, furthestId });
+    else setUndoState(null);
+    setHereId(null);
+    setSelectedId(null);
+    setWalkBack(nextWalkBack);
+    saveProgress(next);
+  }
+
+  function handleAdvance(steps = 1) {
+    const next = beatAfterSteps(catalog.beats, furthestId, steps);
+    if (!next || next.id === furthestId) return;
+    commit({ progressId: next.id, furthestId: next.id }, true);
+  }
+
+  function handleSelectBeat(beatId: string) {
+    const beat = beatById(catalog.beats, beatId);
+    if (!beat) return;
+    commit({ progressId: beat.id, furthestId }, false, beat.id !== furthestId);
+  }
+
+  function handleSelectChapter(chapterId: string) {
+    const beat = lastBeatForChapter(catalog.beats, chapterId);
+    if (!beat) return;
+    const nextFurthest =
+      beatOrder(catalog.beats, beat.id) > beatOrder(catalog.beats, furthestId)
+        ? beat.id
+        : furthestId;
+    commit(
+      { progressId: beat.id, furthestId: nextFurthest },
+      true,
+      beat.id !== nextFurthest,
+    );
+  }
+
+  function handleReset() {
+    commit({ progressId: DEFAULT_BEAT, furthestId: DEFAULT_BEAT }, false);
+  }
+
+  function handleReturnLatest() {
+    commit({ progressId: furthestId, furthestId }, false);
+  }
+
+  function handleUndo() {
+    if (!undoState) return;
+    const previous = undoState;
+    setUndoState(null);
+    setHereId(null);
+    setSelectedId(null);
+    setWalkBack(false);
+    saveProgress(previous);
+  }
 
   function handleSelect(id: string) {
     setSelectedId(id);
-    setMobileOpen(true);
+    setProgressOpen(false);
+    if (isMobile) setMobileOpen(true);
+  }
+
+  function handleProgressOpen(open: boolean) {
+    setProgressOpen(open);
+    if (open) setMobileOpen(false);
   }
 
   const inspector = (
     <Inspector
       location={selected}
+      beats={catalog.beats}
       chapters={catalog.chapters}
       characters={people}
-      progressId={progressId}
-      currentSynopsis={current?.synopsis ?? ""}
+      noteProgressId={noteProgressId}
+      currentSynopsis={currentBeat?.synopsis ?? ""}
       visibleCount={places.length}
+      isCurrent={selected?.id === focusLocationId && !walkBack}
+      walkBack={walkBack}
       onClear={() => setSelectedId(null)}
+      onMarkHere={(id) => {
+        setHereId(id);
+        setWalkBack(false);
+      }}
     />
   );
 
   return (
     <div className="flex min-h-dvh flex-col bg-[#120e0b] text-[#f0e6d4]">
       <header className="relative z-40 border-b border-[#c4a574]/20 bg-[#120e0b]/95 px-3 py-2 backdrop-blur-md md:px-6 md:py-3">
-        <div className="flex flex-col gap-2 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="min-w-0">
             <p className="font-[family-name:var(--font-cinzel)] text-[0.62rem] tracking-[0.34em] text-[#c4a574] md:text-[0.68rem]">
               Book Maps
@@ -109,17 +203,27 @@ export function AppShell() {
               The Shadow of the Wind
             </h1>
             <p className="mt-0.5 hidden text-sm text-[#c4b49a] sm:block">
-              A spoiler-gated map of Zafón’s Barcelona. Set how far you have
-              read; later streets stay off the map.
+              Later streets stay off the map.
             </p>
           </div>
           <ProgressControl
+            beats={catalog.beats}
             chapters={catalog.chapters}
             progressId={progressId}
-            onChange={(id) => {
-              saveProgress(id);
-              setSelectedId(null);
-            }}
+            furthestId={furthestId}
+            walkBack={walkBack}
+            canUndo={Boolean(undoState)}
+            canAdvance={canAdvance}
+            sheetOpen={progressOpen}
+            onSheetOpenChange={handleProgressOpen}
+            onWalkBackChange={setWalkBack}
+            onAdvance={() => handleAdvance(1)}
+            onCatchUp={handleAdvance}
+            onUndo={handleUndo}
+            onSelectBeat={handleSelectBeat}
+            onSelectChapter={handleSelectChapter}
+            onReturnLatest={handleReturnLatest}
+            onReset={handleReset}
           />
         </div>
       </header>
@@ -131,7 +235,8 @@ export function AppShell() {
               locations={places}
               journeys={routes}
               selectedId={selected?.id ?? null}
-              currentChapterId={progressId}
+              focusLocationId={focusLocationId}
+              walkBack={walkBack}
               onSelect={handleSelect}
             />
           </div>
@@ -140,13 +245,13 @@ export function AppShell() {
             <MapEmptyState
               title={
                 filterActive
-                  ? "No places for this character yet"
+                  ? "No places for this person yet"
                   : "No places are known to you yet"
               }
               body={
                 filterActive
                   ? "They may only be named, or they may appear on a historical site. Try Background places, or clear the filter."
-                  : "Advance your chapter when you have read further."
+                  : "Tap I’ve read further when you have turned another page."
               }
             />
           ) : null}
@@ -202,7 +307,10 @@ export function AppShell() {
             <Button
               size="sm"
               variant="secondary"
-              onClick={() => setMobileOpen(true)}
+              onClick={() => {
+                setMobileOpen(true);
+                setProgressOpen(false);
+              }}
             >
               <PanelRight />
               Inspector
@@ -215,15 +323,17 @@ export function AppShell() {
         </aside>
       </div>
 
-      <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-        <SheetContent
-          side="bottom"
-          className="z-[2000] h-[min(78dvh,36rem)] border-[#c4a574]/25 bg-[#1a1410] p-0 lg:hidden"
-        >
-          <SheetTitle className="sr-only">Place inspector</SheetTitle>
-          {inspector}
-        </SheetContent>
-      </Sheet>
+      {isMobile ? (
+        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+          <SheetContent
+            side="bottom"
+            className="z-[2000] h-[min(78dvh,36rem)] border-[#c4a574]/25 bg-[#1a1410] p-0"
+          >
+            <SheetTitle className="sr-only">Place inspector</SheetTitle>
+            {inspector}
+          </SheetContent>
+        </Sheet>
+      ) : null}
     </div>
   );
 }

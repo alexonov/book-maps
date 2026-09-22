@@ -1,49 +1,26 @@
-import type {
-  Chapter,
-  Character,
-  Journey,
-  Location,
-} from "@/data/types";
-
-export function chapterById(
-  chapters: Chapter[],
-  id: string,
-): Chapter | undefined {
-  return chapters.find((chapter) => chapter.id === id);
-}
-
-export function chapterOrder(chapters: Chapter[], id: string): number {
-  return chapterById(chapters, id)?.order ?? Number.POSITIVE_INFINITY;
-}
+import type { Beat, Character, Journey, Location } from "@/data/types";
+import { beatOrder } from "@/lib/beats";
 
 export function isRevealed(
-  chapters: Chapter[],
+  beats: Beat[],
   revealedIn: string,
   progressId: string,
 ): boolean {
-  return chapterOrder(chapters, revealedIn) <= chapterOrder(chapters, progressId);
-}
-
-export function visibleChapters(
-  chapters: Chapter[],
-  progressId: string,
-): Chapter[] {
-  const limit = chapterOrder(chapters, progressId);
-  return chapters.filter((chapter) => chapter.order <= limit);
+  return beatOrder(beats, revealedIn) <= beatOrder(beats, progressId);
 }
 
 export function visibleCharacters(
-  chapters: Chapter[],
+  beats: Beat[],
   characters: Character[],
   progressId: string,
 ): Character[] {
   return characters.filter((character) =>
-    isRevealed(chapters, character.revealedIn, progressId),
+    isRevealed(beats, character.revealedIn, progressId),
   );
 }
 
 export function visibleLocations(
-  chapters: Chapter[],
+  beats: Beat[],
   locations: Location[],
   progressId: string,
   options: { showBackground: boolean; characterIds: string[] },
@@ -51,7 +28,7 @@ export function visibleLocations(
   const allowedCharacters = new Set(options.characterIds);
 
   return locations.filter((location) => {
-    if (!isRevealed(chapters, location.revealedIn, progressId)) return false;
+    if (!isRevealed(beats, location.revealedIn, progressId)) return false;
     if (location.background && !options.showBackground) return false;
     if (allowedCharacters.size === 0) return true;
     return location.characterIds.some((id) => allowedCharacters.has(id));
@@ -59,7 +36,7 @@ export function visibleLocations(
 }
 
 export function visibleJourneys(
-  chapters: Chapter[],
+  beats: Beat[],
   journeys: Journey[],
   progressId: string,
   options: { showRoutes: boolean; characterIds: string[] },
@@ -68,7 +45,7 @@ export function visibleJourneys(
   const allowedCharacters = new Set(options.characterIds);
 
   return journeys.filter((journey) => {
-    if (!isRevealed(chapters, journey.revealedIn, progressId)) return false;
+    if (!isRevealed(beats, journey.revealedIn, progressId)) return false;
     if (allowedCharacters.size === 0) return true;
     return journey.characterIds.some((id) => allowedCharacters.has(id));
   });
@@ -76,10 +53,10 @@ export function visibleJourneys(
 
 export function notesForProgress(
   location: Location,
-  chapters: Chapter[],
+  beats: Beat[],
   progressId: string,
 ): string[] {
-  return (location.notesByChapter ?? [])
-    .filter((note) => isRevealed(chapters, note.chapterId, progressId))
+  return (location.notesByBeat ?? [])
+    .filter((note) => isRevealed(beats, note.beatId, progressId))
     .map((note) => note.text);
 }

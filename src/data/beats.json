@@ -1,0 +1,123 @@
+[
+  {
+    "id": "dawn-santa-anna",
+    "order": 1,
+    "chapterId": "cemetery",
+    "title": "Dawn on Santa Anna",
+    "placeLabel": "Santa Anna",
+    "moodLabel": "dawn",
+    "yearLabel": "1945",
+    "currentLocationId": "sempere-bookshop",
+    "synopsis": "A bookseller and his son live above the shop. The city is still dark."
+  },
+  {
+    "id": "dawn-rambla",
+    "order": 2,
+    "chapterId": "cemetery",
+    "title": "The lower Rambla",
+    "placeLabel": "Rambla de Santa Mònica",
+    "moodLabel": "ashen skies",
+    "yearLabel": "1945",
+    "currentLocationId": "rambla-santa-monica",
+    "synopsis": "Father and son walk toward the port under a dawn of ashen skies."
+  },
+  {
+    "id": "cemetery-chosen",
+    "order": 3,
+    "chapterId": "cemetery",
+    "title": "A hidden library",
+    "placeLabel": "Arc del Teatre",
+    "moodLabel": "a hidden door",
+    "yearLabel": "1945",
+    "currentLocationId": "cemetery-forgotten-books",
+    "synopsis": "Behind an unremarkable door, a labyrinth of unwanted books. The boy chooses one volume."
+  },
+  {
+    "id": "empty-catalogues",
+    "order": 4,
+    "chapterId": "ashes-1",
+    "title": "Empty catalogues",
+    "placeLabel": "Santa Anna",
+    "moodLabel": "empty catalogues",
+    "yearLabel": "1945",
+    "currentLocationId": "sempere-bookshop",
+    "synopsis": "The name on the spine is missing from every catalogue in the shop."
+  },
+  {
+    "id": "quatre-gats",
+    "order": 5,
+    "chapterId": "ashes-1",
+    "title": "Barceló at Els Quatre Gats",
+    "placeLabel": "Els Quatre Gats",
+    "moodLabel": "after hours",
+    "yearLabel": "1945",
+    "currentLocationId": "quatre-gats",
+    "synopsis": "They take the book to a collector who already wants to buy it."
+  },
+  {
+    "id": "ateneo-clara",
+    "order": 6,
+    "chapterId": "ashes-2",
+    "title": "Clara at the Ateneo",
+    "placeLabel": "Ateneo",
+    "moodLabel": "a woman in white",
+    "yearLabel": "1945",
+    "currentLocationId": "ateneu",
+    "synopsis": "In the library, the collector sits beside a woman in white. The book, he says, is now unique."
+  },
+  {
+    "id": "clara-story",
+    "order": 7,
+    "chapterId": "ashes-3",
+    "title": "A castle on the hill",
+    "placeLabel": "Ateneo",
+    "moodLabel": "Clara’s story",
+    "yearLabel": "1945",
+    "currentLocationId": "ateneu",
+    "synopsis": "Clara tells how she first met the novelist’s work, and how her father died in a fortress after the war began."
+  },
+  {
+    "id": "fumero-named",
+    "order": 8,
+    "chapterId": "ashes-4",
+    "title": "A name from the war",
+    "placeLabel": "Ateneo",
+    "moodLabel": "a name from the war",
+    "yearLabel": "1945",
+    "currentLocationId": "ateneu",
+    "synopsis": "Someone has been buying the novels in order to burn them. A policeman’s name is attached to an old killing."
+  },
+  {
+    "id": "barcelo-house",
+    "order": 9,
+    "chapterId": "ashes-5",
+    "title": "Plaça Reial",
+    "placeLabel": "Plaça Reial",
+    "moodLabel": "a palatial flat",
+    "yearLabel": "1945",
+    "currentLocationId": "barcelo-apartment",
+    "synopsis": "Daniel has come from the collector’s house, carrying a wartime story home."
+  },
+  {
+    "id": "remembered-pen",
+    "order": 10,
+    "chapterId": "ashes-5",
+    "title": "A remembered pen",
+    "placeLabel": "Llibreteria",
+    "moodLabel": "a shop-window memory",
+    "yearLabel": "1945",
+    "currentLocationId": "pen-shop",
+    "synopsis": "A fountain pen in a window he could not have. The memory returns while he thinks about writing."
+  },
+  {
+    "id": "watching-street",
+    "order": 11,
+    "chapterId": "ashes-5",
+    "title": "A watching street",
+    "placeLabel": "Santa Anna",
+    "moodLabel": "a watching street",
+    "yearLabel": "1945",
+    "currentLocationId": "watching-figure",
+    "synopsis": "Near home, Daniel thinks he is being watched. By morning he will try to believe he imagined it."
+  }
+]
