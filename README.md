@@ -2,7 +2,7 @@
 
 A spoiler-free map companion for *The Shadow of the Wind* by Carlos Ruiz Zafón. Mark how far you have read; the map of 1945 Barcelona only shows places, people, and routes you have already met. Later pins are not greyed out. They are not there.
 
-This slice covers the opening (**The Cemetery of Forgotten Books**) and **Days of Ashes, chapters 1–5**, split into scene beats. Fermín Romero de Torres has not entered the story yet, so he is not in the data.
+The dataset covers the whole novel, split into scene beats. Pins, names, and notes stay off the map until the reader has marked that moment.
 
 Literary shops and the Cemetery of Forgotten Books are fictional and marked as approximate. Cafés, the Ateneo, Plaça Reial, Montjuïc Castle, and the streets themselves are real, with coordinates you can walk.
 

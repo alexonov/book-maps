@@ -10,8 +10,37 @@
     "lat": 41.38542,
     "lng": 2.17192,
     "revealedIn": "dawn-santa-anna",
-    "activeIn": ["dawn-santa-anna", "empty-catalogues", "watching-street"],
-    "characterIds": ["daniel", "mr-sempere"],
+    "activeIn": [
+      "dawn-santa-anna",
+      "empty-catalogues",
+      "watching-street",
+      "empty-birthday",
+      "birthday-pen",
+      "fermin-hired",
+      "tomas-bea-named",
+      "burned-photo",
+      "fumero-counter",
+      "nuria-lied",
+      "tomas-warning",
+      "bea-card",
+      "morgue-story",
+      "shop-smashed",
+      "nuria-paris",
+      "nuria-only-penelope",
+      "a-wedding-anyway"
+    ],
+    "characterIds": [
+      "daniel",
+      "mr-sempere",
+      "fermin",
+      "bernarda",
+      "bea",
+      "tomas",
+      "fumero",
+      "merceditas",
+      "palacios",
+      "julian-child"
+    ],
     "blurb": "Father and son live above this modest second-hand bookshop on Santa Anna Street, between the Rambla and Portal de l’Àngel.",
     "notesByBeat": [
       {
@@ -21,6 +50,42 @@
       {
         "beatId": "watching-street",
         "text": "Back in their rooms, Daniel tells his father he has promised to read to Clara, then asks about the war, and is told it is better left alone."
+      },
+      {
+        "beatId": "empty-birthday",
+        "text": "Daniel is sixteen. The dinner is laid for Clara and Barceló. Only Bernarda sits down."
+      },
+      {
+        "beatId": "birthday-pen",
+        "text": "After midnight his father is still awake. The fountain pen from the old shop window is the birthday gift."
+      },
+      {
+        "beatId": "fermin-hired",
+        "text": "Fermín is brought in from the street. There are scars. Mr. Sempere offers him a job."
+      },
+      {
+        "beatId": "burned-photo",
+        "text": "Someone leaves a half-burned photograph: a young couple, and a window that says Sons of Antonio Fortuny."
+      },
+      {
+        "beatId": "fumero-counter",
+        "text": "Inspector Fumero stands at the counter and asks after Fermín. Daniel says he does not know him."
+      },
+      {
+        "beatId": "bea-card",
+        "text": "Bea leaves a card and is gone before he opens it. The address is already known to him."
+      },
+      {
+        "beatId": "shop-smashed",
+        "text": "Fumero turns the shelves. Tomorrow’s paper will do worse."
+      },
+      {
+        "beatId": "nuria-paris",
+        "text": "Daniel reads the first pages here, behind a shut door."
+      },
+      {
+        "beatId": "a-wedding-anyway",
+        "text": "The shop becomes a house again. There will be a child with a borrowed name."
       }
     ],
     "address": "Carrer de Santa Anna (literary; no numbered shop survives)",
@@ -42,7 +107,10 @@
     "lng": 2.17148,
     "revealedIn": "dawn-santa-anna",
     "activeIn": [],
-    "characterIds": ["daniel", "mr-sempere"],
+    "characterIds": [
+      "daniel",
+      "mr-sempere"
+    ],
     "blurb": "The medieval church on the Semperes’ street — neighborhood stone, not yet a stage for the plot.",
     "address": "Carrer de Santa Anna / Placeta de Ramon Amadeu",
     "neighborhood": "Barri Gòtic",
@@ -63,8 +131,13 @@
     "lat": 41.37685,
     "lng": 2.1769,
     "revealedIn": "dawn-rambla",
-    "activeIn": ["dawn-rambla"],
-    "characterIds": ["daniel", "mr-sempere"],
+    "activeIn": [
+      "dawn-rambla"
+    ],
+    "characterIds": [
+      "daniel",
+      "mr-sempere"
+    ],
     "blurb": "Early summer, 1945. Dawn pours over the lower Rambla as father and son walk a Barcelona of ashen skies.",
     "address": "La Rambla, toward the port",
     "neighborhood": "El Raval / Gòtic",
@@ -84,15 +157,43 @@
     "lat": 41.37715,
     "lng": 2.17535,
     "revealedIn": "cemetery-chosen",
-    "activeIn": ["cemetery-chosen"],
-    "characterIds": ["daniel", "mr-sempere", "isaac", "carax"],
+    "activeIn": [
+      "cemetery-chosen",
+      "isaac-coubert",
+      "bea-cemetery",
+      "dawn-with-a-son"
+    ],
+    "characterIds": [
+      "daniel",
+      "mr-sempere",
+      "isaac",
+      "carax",
+      "nuria",
+      "fermin",
+      "bea",
+      "julian-child"
+    ],
     "blurb": "A secret labyrinth of unwanted books, known only to a few booksellers. Daniel chooses one volume and promises to guard it.",
     "address": "Carrer de l’Arc del Teatre (traditional literary placement)",
     "neighborhood": "El Raval",
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.37715&mlon=2.17535#map=18/41.37715/2.17535",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.37715,2.17535"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.37715,2.17535",
+    "notesByBeat": [
+      {
+        "beatId": "isaac-coubert",
+        "text": "Isaac names the burner Laín Coubert. Nuria hid copies here after a warehouse fire. Daniel leaves the novel among old philosophy."
+      },
+      {
+        "beatId": "bea-cemetery",
+        "text": "Isaac lets Bea through the door. She chooses a book of her own. Daniel kisses her in the stacks."
+      },
+      {
+        "beatId": "dawn-with-a-son",
+        "text": "Another dawn, another boy, the same door. The keeper of the place is no longer only Isaac."
+      }
+    ]
   },
   {
     "id": "quatre-gats",
@@ -105,8 +206,14 @@
     "lat": 41.38578,
     "lng": 2.17367,
     "revealedIn": "quatre-gats",
-    "activeIn": ["quatre-gats"],
-    "characterIds": ["daniel", "mr-sempere", "barcelo"],
+    "activeIn": [
+      "quatre-gats"
+    ],
+    "characterIds": [
+      "daniel",
+      "mr-sempere",
+      "barcelo"
+    ],
     "blurb": "Barceló’s after-work haunt — and the café where Daniel’s parents once met. Tonight the collector examines a book he wants to buy.",
     "address": "Carrer de Montsió, 3",
     "neighborhood": "Barri Gòtic",
@@ -126,8 +233,17 @@
     "lat": 41.3845,
     "lng": 2.17355,
     "revealedIn": "ateneo-clara",
-    "activeIn": ["ateneo-clara", "clara-story", "fumero-named"],
-    "characterIds": ["daniel", "barcelo", "clara", "carax"],
+    "activeIn": [
+      "ateneo-clara",
+      "clara-story",
+      "fumero-named"
+    ],
+    "characterIds": [
+      "daniel",
+      "barcelo",
+      "clara",
+      "carax"
+    ],
     "blurb": "Daniel finds Barceló in the library beside a woman in white. The collector says Carax’s last novel is now unique — the rest have been burned.",
     "notesByBeat": [
       {
@@ -158,7 +274,10 @@
     "lng": 2.1661,
     "revealedIn": "clara-story",
     "activeIn": [],
-    "characterIds": ["clara", "fumero"],
+    "characterIds": [
+      "clara",
+      "fumero"
+    ],
     "blurb": "Clara’s father was jailed here and murdered after friends betrayed him. Daniel hears this as history, not as a place he has walked.",
     "notesByBeat": [
       {
@@ -189,15 +308,46 @@
     "lat": 41.38025,
     "lng": 2.17535,
     "revealedIn": "barcelo-house",
-    "activeIn": ["barcelo-house"],
-    "characterIds": ["daniel", "barcelo", "clara"],
+    "activeIn": [
+      "barcelo-house",
+      "bernarda-door",
+      "clara-walks",
+      "storm-barcelo",
+      "fermin-at-barcelo",
+      "barcelo-takes-the-case"
+    ],
+    "characterIds": [
+      "daniel",
+      "barcelo",
+      "clara",
+      "bernarda",
+      "neri"
+    ],
     "blurb": "A palatial flat overlooking Plaça Reial. Daniel has just come from this house, carrying Clara’s wartime story home to his father.",
     "address": "Plaça Reial (literary apartment; the square is real)",
     "neighborhood": "Barri Gòtic",
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38025&mlon=2.17535#map=18/41.38025/2.17535",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38025,2.17535"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38025,2.17535",
+    "notesByBeat": [
+      {
+        "beatId": "bernarda-door",
+        "text": "Bernarda opens the door. Clara plays badly and serenely. Neri has been hired to teach her."
+      },
+      {
+        "beatId": "clara-walks",
+        "text": "For years Daniel reads here and walks Clara through the square, naming what she cannot see."
+      },
+      {
+        "beatId": "storm-barcelo",
+        "text": "He comes back in a storm for the novel. A voice in Clara’s room is not the stranger from the port."
+      },
+      {
+        "beatId": "fermin-at-barcelo",
+        "text": "Fermín is carried in from the hospice road. Clara stands in the doorway as if four years had not passed."
+      }
+    ]
   },
   {
     "id": "pen-shop",
@@ -210,15 +360,27 @@
     "lat": 41.38308,
     "lng": 2.17735,
     "revealedIn": "remembered-pen",
-    "activeIn": ["remembered-pen"],
-    "characterIds": ["daniel", "mr-sempere"],
+    "activeIn": [
+      "remembered-pen",
+      "birthday-pen"
+    ],
+    "characterIds": [
+      "daniel",
+      "mr-sempere"
+    ],
     "blurb": "In a shop window Daniel once saw a fountain pen said to have belonged to Victor Hugo. His father could not buy it. The memory returns while he thinks about writing — and about the war.",
     "address": "Baixada de la Llibreteria, 2 (traditional identification with Papirum)",
     "neighborhood": "Barri Gòtic",
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38308&mlon=2.17735#map=18/41.38308/2.17735",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38308,2.17735"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38308,2.17735",
+    "notesByBeat": [
+      {
+        "beatId": "birthday-pen",
+        "text": "The pen from this window is no longer only a memory. Mr. Sempere has bought it."
+      }
+    ]
   },
   {
     "id": "watching-figure",
@@ -231,14 +393,653 @@
     "lat": 41.3852,
     "lng": 2.17155,
     "revealedIn": "watching-street",
-    "activeIn": ["watching-street"],
-    "characterIds": ["daniel", "stranger"],
+    "activeIn": [
+      "watching-street",
+      "nuria-the-watcher"
+    ],
+    "characterIds": [
+      "daniel",
+      "stranger"
+    ],
     "blurb": "Near home, Daniel thinks he is being watched. A limping figure in the street. By morning he will try to believe he imagined it.",
     "address": "Carrer de Santa Anna, near the bookshop",
     "neighborhood": "Barri Gòtic",
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38520&mlon=2.17155#map=18/41.38520/2.17155",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38520,2.17155"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38520,2.17155",
+    "notesByBeat": [
+      {
+        "beatId": "coubert-port",
+        "text": "The limp and the watching were not imagined. At the port the same kind of man has a burned face and wants the book."
+      },
+      {
+        "beatId": "nuria-the-watcher",
+        "text": "The manuscript says the burned man watched this street because the boy in the shop would not sell."
+      }
+    ]
+  },
+  {
+    "id": "port-columbus",
+    "names": {
+      "ca": "El Port",
+      "es": "El Puerto",
+      "en": "The port"
+    },
+    "type": "street",
+    "lat": 41.3758,
+    "lng": 2.1779,
+    "revealedIn": "coubert-port",
+    "activeIn": [
+      "coubert-port"
+    ],
+    "characterIds": [
+      "daniel",
+      "coubert"
+    ],
+    "blurb": "Daniel walks here on the night the birthday table stays empty. A limping man in a dark suit knows his name and smells of burned paper.",
+    "address": "Moll de la Fusta / the foot of the Rambla",
+    "neighborhood": "Port Vell",
+    "fictional": false,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.37580&mlon=2.17790#map=17/41.37580/2.17790",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.37580,2.17790"
+  },
+  {
+    "id": "fermin-doorway",
+    "names": {
+      "ca": "El portal de Plaça Reial",
+      "es": "El portal de Plaza Real",
+      "en": "The Plaça Reial doorway"
+    },
+    "type": "street",
+    "lat": 41.38005,
+    "lng": 2.17515,
+    "revealedIn": "fermin-wine",
+    "activeIn": [
+      "fermin-wine"
+    ],
+    "characterIds": [
+      "daniel",
+      "fermin"
+    ],
+    "blurb": "A man who asked to sleep in the lobby is still here when Daniel comes out. He offers wine and a name.",
+    "address": "Plaça Reial, under the arcade",
+    "neighborhood": "Barri Gòtic",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38005&mlon=2.17515#map=18/41.38005/2.17515",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38005,2.17515"
+  },
+  {
+    "id": "encarna-boarding",
+    "names": {
+      "ca": "Pensió d’Encarna",
+      "es": "Pensión de Encarna",
+      "en": "Doña Encarna’s boarding house"
+    },
+    "type": "home",
+    "lat": 41.3841,
+    "lng": 2.1692,
+    "revealedIn": "fermin-room",
+    "activeIn": [
+      "fermin-room"
+    ],
+    "characterIds": [
+      "daniel",
+      "mr-sempere",
+      "fermin"
+    ],
+    "blurb": "A room kept off the register. One night Fermín will not come out, and the old prison is in the room with him.",
+    "address": "Near Santa Anna (literary boarding house; no number in the novel)",
+    "neighborhood": "Barri Gòtic",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38410&mlon=2.16920#map=18/41.38410/2.16920",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38410,2.16920"
+  },
+  {
+    "id": "cinema-aisle",
+    "names": {
+      "ca": "Un cinema",
+      "es": "Un cine",
+      "en": "A cinema"
+    },
+    "type": "event",
+    "lat": 41.3872,
+    "lng": 2.16795,
+    "revealedIn": "cinema-aisle",
+    "activeIn": [
+      "cinema-aisle"
+    ],
+    "characterIds": [
+      "daniel",
+      "fermin",
+      "coubert"
+    ],
+    "blurb": "Fermín has gone for sweets. In the aisle Daniel sees the burned man again. Then the seat is empty.",
+    "address": "A picture house in the old centre (the novel does not name the screen)",
+    "neighborhood": "Eixample / Gòtic edge",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38720&mlon=2.16795#map=17/41.38720/2.16795",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38720,2.16795"
+  },
+  {
+    "id": "university-cloister",
+    "names": {
+      "ca": "Claustre de la Universitat",
+      "es": "Claustro de la Universidad",
+      "en": "University cloister"
+    },
+    "type": "institution",
+    "lat": 41.38675,
+    "lng": 2.16355,
+    "revealedIn": "velazquez-bea",
+    "activeIn": [
+      "velazquez-bea",
+      "bea-cloister",
+      "empty-cloister"
+    ],
+    "characterIds": [
+      "daniel",
+      "bea"
+    ],
+    "blurb": "Daniel comes here with a parcel of books and finds Bea in a professor’s office. On Friday she is waiting in the cloister at dusk.",
+    "notesByBeat": [
+      {
+        "beatId": "bea-cloister",
+        "text": "She says she came to prove him wrong about the marriage. They leave the cloister for a café, and he tells her the whole hunt."
+      }
+    ],
+    "address": "Gran Via de les Corts Catalanes, 585",
+    "neighborhood": "Eixample",
+    "fictional": false,
+    "approximate": false,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38675&mlon=2.16355#map=18/41.38675/2.16355",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38675,2.16355"
+  },
+  {
+    "id": "fortuny-hats",
+    "names": {
+      "ca": "Barreteria Fortuny",
+      "es": "Sombrerería Fortuny",
+      "en": "Fortuny hat shop"
+    },
+    "type": "home",
+    "lat": 41.38135,
+    "lng": 2.16055,
+    "revealedIn": "fortuny-dust",
+    "activeIn": [
+      "fortuny-dust",
+      "carax-locked-room",
+      "nuria-sophie-said"
+    ],
+    "characterIds": [
+      "daniel",
+      "carax",
+      "fortuny",
+      "sophie",
+      "penelope"
+    ],
+    "blurb": "The novel puts Antoni Fortuny’s shop on Ronda de Sant Antoni, at Plaça Goya. The shutters are down. Doña Aurora still has the keys.",
+    "notesByBeat": [
+      {
+        "beatId": "carax-locked-room",
+        "text": "Upstairs, a room full of crucifixes and a photograph signed Penélope. The administrator downstairs talks until night."
+      },
+      {
+        "beatId": "nuria-sophie-said",
+        "text": "Sophie told Miquel, in these rooms’ shadow, a kinship Carax was never meant to learn."
+      }
+    ],
+    "address": "Ronda de Sant Antoni / Plaça Goya, 15 (address in the novel; the shop is fictional)",
+    "neighborhood": "Sant Antoni",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38135&mlon=2.16055#map=18/41.38135/2.16055",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38135,2.16055"
+  },
+  {
+    "id": "aldaya-house",
+    "names": {
+      "ca": "Casa Aldaya",
+      "es": "Casa Aldaya",
+      "en": "The Aldaya house"
+    },
+    "type": "home",
+    "lat": 41.4136,
+    "lng": 2.135,
+    "revealedIn": "tibidabo-gate",
+    "activeIn": [
+      "tibidabo-gate",
+      "angel-of-mist",
+      "letter-in-the-grate",
+      "nuria-the-room",
+      "nuria-miquel-passport",
+      "back-to-the-angel",
+      "three-in-the-house"
+    ],
+    "characterIds": [
+      "daniel",
+      "penelope",
+      "jorge",
+      "carax",
+      "bea",
+      "coubert",
+      "jacinta",
+      "miquel"
+    ],
+    "blurb": "Number 32, behind hedges. Daniel only sees the gate, a dead fountain, and broken statues. A neighbour says the family had a son — not a daughter.",
+    "address": "Avinguda del Tibidabo, 32 (the number is in the novel; the household is fictional)",
+    "neighborhood": "Sant Gervasi",
+    "fictional": true,
+    "approximate": false,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.41360&mlon=2.13500#map=18/41.41360/2.13500",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.41360,2.13500",
+    "notesByBeat": [
+      {
+        "beatId": "angel-of-mist",
+        "text": "Bea has a key from her father’s firm. They are inside for the first time."
+      },
+      {
+        "beatId": "letter-in-the-grate",
+        "text": "She tells the Jausà story. Pablo’s letter burns in the grate."
+      },
+      {
+        "beatId": "nuria-the-room",
+        "text": "The manuscript says Penélope was kept in this house after the elopement failed, and that she died here."
+      },
+      {
+        "beatId": "nuria-miquel-passport",
+        "text": "Miquel found Carax in these rooms and took a passport so the police would shoot the wrong man."
+      },
+      {
+        "beatId": "three-in-the-house",
+        "text": "Bea is here. The burned man is here. Then Fumero is in the garden."
+      }
+    ]
+  },
+  {
+    "id": "federico-watches",
+    "names": {
+      "ca": "Rellotgeria d’en Federico",
+      "es": "Relojería de Federico",
+      "en": "Don Federico’s watch shop"
+    },
+    "type": "institution",
+    "lat": 41.38505,
+    "lng": 2.17055,
+    "revealedIn": "fumero-counter",
+    "activeIn": [
+      "federico-news",
+      "federico-parcel"
+    ],
+    "characterIds": [
+      "daniel",
+      "federico",
+      "fumero"
+    ],
+    "blurb": "The neighbourhood watchmaker. Daniel has already been given a clock from this counter. Then the street learns what was done to him in a cell.",
+    "notesByBeat": [
+      {
+        "beatId": "federico-news",
+        "text": "Don Anacleto brings the news to Santa Anna. Fumero’s name is on the night. Fermín is sent for medicine."
+      }
+    ],
+    "address": "Near Santa Anna (literary shop; no number)",
+    "neighborhood": "Barri Gòtic",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38505&mlon=2.17055#map=18/41.38505/2.17055",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38505,2.17055"
+  },
+  {
+    "id": "nuria-apartment",
+    "names": {
+      "ca": "Pis de Núria Monfort",
+      "es": "Piso de Nuria Monfort",
+      "en": "Nuria Monfort’s apartment"
+    },
+    "type": "home",
+    "lat": 41.3789,
+    "lng": 2.1672,
+    "revealedIn": "nuria-courtyard",
+    "activeIn": [
+      "nuria-courtyard",
+      "nuria-shadows",
+      "back-to-nuria",
+      "nuria-knows-he-knows",
+      "priest-in-the-street",
+      "the-envelope"
+    ],
+    "characterIds": [
+      "daniel",
+      "nuria",
+      "miquel"
+    ],
+    "blurb": "A shabby building and a courtyard. Her name shares the mailbox with Miquel Moliner. She is reading when Daniel finds her.",
+    "notesByBeat": [
+      {
+        "beatId": "nuria-shadows",
+        "text": "Upstairs the rooms are cramped. She talks of Paris, of a body in 1936, and of a man she thinks is Jorge Aldaya."
+      },
+      {
+        "beatId": "nuria-knows-he-knows",
+        "text": "He names the false lawyer. She is more afraid of Fumero than of being caught in a lie."
+      },
+      {
+        "beatId": "the-envelope",
+        "text": "After the funeral Isaac is here among her things. The pages were meant for Daniel."
+      }
+    ],
+    "address": "A working-class courtyard (the novel gives no street number)",
+    "neighborhood": "El Raval",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.37890&mlon=2.16720#map=17/41.37890/2.16720",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.37890,2.16720"
+  },
+  {
+    "id": "investigation-cafe",
+    "names": {
+      "ca": "Un cafè abans de l’escola",
+      "es": "Un café antes de la escuela",
+      "en": "A café before the school"
+    },
+    "type": "street",
+    "lat": 41.3833,
+    "lng": 2.171,
+    "revealedIn": "cafe-before-school",
+    "activeIn": [
+      "cafe-before-school",
+      "fermin-and-the-torch"
+    ],
+    "characterIds": [
+      "daniel",
+      "fermin"
+    ],
+    "blurb": "Daniel and Fermín sit down to say out loud what they think they know. The breakfast does not stay down. Then they take a cab.",
+    "address": "Near the shop (unnamed café)",
+    "neighborhood": "Barri Gòtic",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38330&mlon=2.17100#map=18/41.38330/2.17100",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38330,2.17100"
+  },
+  {
+    "id": "san-gabriel",
+    "names": {
+      "ca": "Col·legi Sant Gabriel",
+      "es": "Colegio San Gabriel",
+      "en": "San Gabriel School"
+    },
+    "type": "institution",
+    "lat": 41.3932,
+    "lng": 2.1028,
+    "revealedIn": "san-gabriel-gate",
+    "activeIn": [
+      "san-gabriel-gate",
+      "fernando-remembers",
+      "jacinta-named"
+    ],
+    "characterIds": [
+      "daniel",
+      "fermin",
+      "carax",
+      "fernando",
+      "jorge",
+      "miquel",
+      "fumero",
+      "penelope"
+    ],
+    "blurb": "A worn Gothic school with angels in the garden. It used to take only the old names. Carax was the scholarship boy.",
+    "notesByBeat": [
+      {
+        "beatId": "fernando-remembers",
+        "text": "Father Fernando remembers Aldaya’s car, Jorge’s tour of the house, and a girl on the stairs."
+      },
+      {
+        "beatId": "jacinta-named",
+        "text": "The woodcarver in that class is Inspector Fumero. Fernando says the governess Jacinta is at Santa Lucía."
+      }
+    ],
+    "address": "Outside the old city (fictional school; pin is a hillside stand-in)",
+    "neighborhood": "Pedralbes",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.39320&mlon=2.10280#map=16/41.39320/2.10280",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.39320,2.10280"
+  },
+  {
+    "id": "santa-lucia",
+    "names": {
+      "ca": "Asil de Santa Llúcia",
+      "es": "Asilo de Santa Lucía",
+      "en": "Santa Lucía hospice"
+    },
+    "type": "institution",
+    "lat": 41.38415,
+    "lng": 2.18065,
+    "revealedIn": "jacinta-named",
+    "activeIn": [
+      "hospice-road",
+      "hospice-corridors",
+      "jacinta-speaks",
+      "fumero-on-the-road",
+      "jacinta-gone"
+    ],
+    "characterIds": [
+      "jacinta",
+      "penelope",
+      "daniel",
+      "fermin",
+      "fumero"
+    ],
+    "blurb": "Father Fernando says Jacinta lives here. Daniel and Fermín have not walked this street yet.",
+    "address": "Carrer de Montcada (literary placement for a hospice the novel names; they have not gone in)",
+    "neighborhood": "El Born",
+    "fictional": true,
+    "approximate": true,
+    "background": false,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38415&mlon=2.18065#map=18/41.38415/2.18065",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38415,2.18065",
+    "notesByBeat": [
+      {
+        "beatId": "hospice-corridors",
+        "text": "They are taken for undertakers and left to walk the wards."
+      },
+      {
+        "beatId": "jacinta-speaks",
+        "text": "She tells the affair, the train, and the years in an asylum. Fermín holds her while she weeps."
+      },
+      {
+        "beatId": "jacinta-gone",
+        "text": "They come back later to keep a promise. Jacinta has already died. Someone visited her first."
+      }
+    ]
+  },
+  {
+    "id": "aldaya-crypt",
+    "names": {
+      "ca": "Cripta Aldaya",
+      "es": "Cripta Aldaya",
+      "en": "The Aldaya crypt"
+    },
+    "type": "event",
+    "lat": 41.41355,
+    "lng": 2.13508,
+    "revealedIn": "aldaya-crypt",
+    "activeIn": [
+      "aldaya-crypt",
+      "nuria-the-room"
+    ],
+    "characterIds": [
+      "daniel",
+      "bea",
+      "penelope",
+      "coubert"
+    ],
+    "blurb": "Behind a door carved with angels. A coffin marked 1919. A voice Daniel already knows tells him to leave.",
+    "address": "Under the house at Avinguda del Tibidabo, 32",
+    "neighborhood": "Sant Gervasi",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.41355&mlon=2.13508#map=18/41.41355/2.13508",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.41355,2.13508"
+  },
+  {
+    "id": "aldaya-fountain",
+    "names": {
+      "ca": "La font de l’àngel",
+      "es": "La fuente del ángel",
+      "en": "The angel in the fountain"
+    },
+    "type": "event",
+    "lat": 41.41368,
+    "lng": 2.13492,
+    "revealedIn": "angel-of-mist",
+    "activeIn": [
+      "angel-of-mist",
+      "the-fountain-angel"
+    ],
+    "characterIds": [
+      "daniel",
+      "bea",
+      "fumero",
+      "carax"
+    ],
+    "blurb": "An avenging angel dumped in a dry basin. Later the garden uses it.",
+    "notesByBeat": [
+      {
+        "beatId": "the-fountain-angel",
+        "text": "The inspector reaches the statue. The night ends in the water and in a siren."
+      }
+    ],
+    "address": "Garden of Avinguda del Tibidabo, 32",
+    "neighborhood": "Sant Gervasi",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.41368&mlon=2.13492#map=18/41.41368/2.13492",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.41368,2.13492"
+  },
+  {
+    "id": "aguilar-house",
+    "names": {
+      "ca": "Casa Aguilar",
+      "es": "Casa Aguilar",
+      "en": "The Aguilar house"
+    },
+    "type": "home",
+    "lat": 41.3915,
+    "lng": 2.1655,
+    "revealedIn": "seven-days",
+    "activeIn": [
+      "seven-days",
+      "rain-and-tomas",
+      "tomas-at-the-door"
+    ],
+    "characterIds": [
+      "daniel",
+      "bea",
+      "tomas",
+      "pablo"
+    ],
+    "blurb": "A respectable Eixample flat. Daniel walks the pavement for a week before he is let as far as the door.",
+    "notesByBeat": [
+      {
+        "beatId": "tomas-at-the-door",
+        "text": "At dawn Tomás says she has gone. He will not say where. He hits the man he used to walk to school with."
+      }
+    ],
+    "address": "Eixample (literary house; the novel gives no number)",
+    "neighborhood": "Eixample",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.39150&mlon=2.16550#map=17/41.39150/2.16550",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.39150,2.16550"
+  },
+  {
+    "id": "montjuic-cemetery",
+    "names": {
+      "ca": "Cementiri de Montjuïc",
+      "es": "Cementerio de Montjuic",
+      "en": "Montjuïc Cemetery"
+    },
+    "type": "event",
+    "lat": 41.3555,
+    "lng": 2.1545,
+    "revealedIn": "nuria-funeral",
+    "activeIn": [
+      "nuria-funeral"
+    ],
+    "characterIds": [
+      "daniel",
+      "nuria",
+      "palacios"
+    ],
+    "blurb": "Neighbours come. Her father does not. An officer who was in the rain wants a word at the gate.",
+    "address": "Cemeteri de Montjuïc",
+    "neighborhood": "Montjuïc",
+    "fictional": false,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.35550&mlon=2.15450#map=16/41.35550/2.15450",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.35550,2.15450"
+  },
+  {
+    "id": "cabestany-warehouse",
+    "names": {
+      "ca": "Magatzem Cabestany",
+      "es": "Almacén Cabestany",
+      "en": "Cabestany’s warehouse"
+    },
+    "type": "event",
+    "lat": 41.3982,
+    "lng": 2.1914,
+    "revealedIn": "nuria-warehouse",
+    "activeIn": [
+      "nuria-warehouse"
+    ],
+    "characterIds": [
+      "carax",
+      "nuria",
+      "coubert"
+    ],
+    "blurb": "The stock of a publisher who kept printing a man nobody bought. The manuscript says the fire was not an accident.",
+    "address": "The docks / Poblenou (literary warehouse; no number)",
+    "neighborhood": "Poblenou",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.39820&mlon=2.19140#map=16/41.39820/2.19140",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.39820,2.19140"
+  },
+  {
+    "id": "clinic-hospital",
+    "names": {
+      "ca": "Hospital Clínic",
+      "es": "Hospital Clínic",
+      "en": "The hospital"
+    },
+    "type": "institution",
+    "lat": 41.3889,
+    "lng": 2.1519,
+    "revealedIn": "white-room",
+    "activeIn": [
+      "white-room"
+    ],
+    "characterIds": [
+      "daniel",
+      "bea",
+      "mr-sempere",
+      "fermin",
+      "carax"
+    ],
+    "blurb": "Three weeks of a white room. The city is told a simpler story than the garden. A pen leaves the table.",
+    "address": "Carrer de Villarroel, 170 (a real hospital; the novel does not name the ward)",
+    "neighborhood": "Eixample",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38890&mlon=2.15190#map=17/41.38890/2.15190",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38890,2.15190"
   }
 ]

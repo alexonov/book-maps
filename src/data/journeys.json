@@ -3,53 +3,441 @@
     "id": "dawn-walk",
     "name": "Dawn walk to the Cemetery",
     "revealedIn": "dawn-rambla",
-    "characterIds": ["daniel", "mr-sempere"],
+    "characterIds": [
+      "daniel",
+      "mr-sempere"
+    ],
     "description": "From the rooms above the bookshop, father and son cross a sleeping city toward a door in the Raval.",
     "path": [
-      { "lat": 41.38542, "lng": 2.17192 },
-      { "lat": 41.38455, "lng": 2.17055 },
-      { "lat": 41.3824, "lng": 2.17215 },
-      { "lat": 41.3799, "lng": 2.17385 },
-      { "lat": 41.37755, "lng": 2.17655 },
-      { "lat": 41.37715, "lng": 2.17535 }
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      },
+      {
+        "lat": 41.38455,
+        "lng": 2.17055
+      },
+      {
+        "lat": 41.3824,
+        "lng": 2.17215
+      },
+      {
+        "lat": 41.3799,
+        "lng": 2.17385
+      },
+      {
+        "lat": 41.37755,
+        "lng": 2.17655
+      },
+      {
+        "lat": 41.37715,
+        "lng": 2.17535
+      }
     ]
   },
   {
     "id": "to-quatre-gats",
     "name": "Sempere to Els Quatre Gats",
     "revealedIn": "quatre-gats",
-    "characterIds": ["daniel", "mr-sempere", "barcelo"],
+    "characterIds": [
+      "daniel",
+      "mr-sempere",
+      "barcelo"
+    ],
     "description": "A short walk from Santa Anna Street to Barceló’s habitual café on Carrer de Montsió.",
     "path": [
-      { "lat": 41.38542, "lng": 2.17192 },
-      { "lat": 41.3857, "lng": 2.17285 },
-      { "lat": 41.38578, "lng": 2.17367 }
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      },
+      {
+        "lat": 41.3857,
+        "lng": 2.17285
+      },
+      {
+        "lat": 41.38578,
+        "lng": 2.17367
+      }
     ]
   },
   {
     "id": "to-ateneo",
     "name": "Daniel walks to the Ateneo",
     "revealedIn": "ateneo-clara",
-    "characterIds": ["daniel", "barcelo", "clara"],
+    "characterIds": [
+      "daniel",
+      "barcelo",
+      "clara"
+    ],
     "description": "The next day Daniel carries the book to the Ateneo library, where Barceló has asked him to come.",
     "path": [
-      { "lat": 41.38542, "lng": 2.17192 },
-      { "lat": 41.38495, "lng": 2.1727 },
-      { "lat": 41.3845, "lng": 2.17355 }
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      },
+      {
+        "lat": 41.38495,
+        "lng": 2.1727
+      },
+      {
+        "lat": 41.3845,
+        "lng": 2.17355
+      }
     ]
   },
   {
     "id": "home-from-barcelo",
     "name": "Home from Plaça Reial",
     "revealedIn": "barcelo-house",
-    "characterIds": ["daniel"],
+    "characterIds": [
+      "daniel"
+    ],
     "description": "Daniel returns from the Barceló apartment preoccupied, crossing the old city toward Santa Anna Street.",
     "path": [
-      { "lat": 41.38025, "lng": 2.17535 },
-      { "lat": 41.38145, "lng": 2.1742 },
-      { "lat": 41.3832, "lng": 2.1724 },
-      { "lat": 41.38455, "lng": 2.17055 },
-      { "lat": 41.38542, "lng": 2.17192 }
+      {
+        "lat": 41.38025,
+        "lng": 2.17535
+      },
+      {
+        "lat": 41.38145,
+        "lng": 2.1742
+      },
+      {
+        "lat": 41.3832,
+        "lng": 2.1724
+      },
+      {
+        "lat": 41.38455,
+        "lng": 2.17055
+      },
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      }
+    ]
+  },
+  {
+    "id": "birthday-to-port",
+    "name": "Down to the port",
+    "revealedIn": "coubert-port",
+    "characterIds": [
+      "daniel"
+    ],
+    "description": "Daniel leaves the empty birthday table and walks the Rambla toward the water.",
+    "path": [
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      },
+      {
+        "lat": 41.3824,
+        "lng": 2.17215
+      },
+      {
+        "lat": 41.3799,
+        "lng": 2.17385
+      },
+      {
+        "lat": 41.37755,
+        "lng": 2.17655
+      },
+      {
+        "lat": 41.3758,
+        "lng": 2.1779
+      }
+    ]
+  },
+  {
+    "id": "port-to-barcelo",
+    "name": "Back to Plaça Reial",
+    "revealedIn": "storm-barcelo",
+    "characterIds": [
+      "daniel"
+    ],
+    "description": "He runs from the water to Clara’s house to take the book off the shelf.",
+    "path": [
+      {
+        "lat": 41.3758,
+        "lng": 2.1779
+      },
+      {
+        "lat": 41.3778,
+        "lng": 2.1764
+      },
+      {
+        "lat": 41.38025,
+        "lng": 2.17535
+      }
+    ]
+  },
+  {
+    "id": "to-hide-the-book",
+    "name": "To hide the novel",
+    "revealedIn": "isaac-coubert",
+    "characterIds": [
+      "daniel"
+    ],
+    "description": "From the doorway on Plaça Reial to Isaac’s door, with the book under his arm.",
+    "path": [
+      {
+        "lat": 41.38005,
+        "lng": 2.17515
+      },
+      {
+        "lat": 41.3788,
+        "lng": 2.1758
+      },
+      {
+        "lat": 41.37715,
+        "lng": 2.17535
+      }
+    ]
+  },
+  {
+    "id": "to-fortuny",
+    "name": "To the hat shop",
+    "revealedIn": "fortuny-dust",
+    "characterIds": [
+      "daniel"
+    ],
+    "description": "From Santa Anna across to Ronda de Sant Antoni, where the Fortuny shutters are down.",
+    "path": [
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      },
+      {
+        "lat": 41.3838,
+        "lng": 2.1668
+      },
+      {
+        "lat": 41.38135,
+        "lng": 2.16055
+      }
+    ]
+  },
+  {
+    "id": "train-to-tibidabo",
+    "name": "Out to Tibidabo",
+    "revealedIn": "tibidabo-gate",
+    "characterIds": [
+      "daniel"
+    ],
+    "description": "A train out of the old city to the return address on Penélope’s letter.",
+    "path": [
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      },
+      {
+        "lat": 41.3992,
+        "lng": 2.155
+      },
+      {
+        "lat": 41.4095,
+        "lng": 2.142
+      },
+      {
+        "lat": 41.4136,
+        "lng": 2.135
+      }
+    ]
+  },
+  {
+    "id": "to-nuria",
+    "name": "To Nuria’s courtyard",
+    "revealedIn": "nuria-courtyard",
+    "characterIds": [
+      "daniel"
+    ],
+    "description": "Daniel walks from the shop into a poorer street, looking for Isaac’s daughter.",
+    "path": [
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      },
+      {
+        "lat": 41.3824,
+        "lng": 2.1695
+      },
+      {
+        "lat": 41.3789,
+        "lng": 2.1672
+      }
+    ]
+  },
+  {
+    "id": "cloister-to-cemetery",
+    "name": "Cloister to the hidden door",
+    "revealedIn": "bea-cemetery",
+    "characterIds": [
+      "daniel",
+      "bea"
+    ],
+    "description": "From the university cloister, Bea asks to see the Cemetery of Forgotten Books.",
+    "path": [
+      {
+        "lat": 41.38675,
+        "lng": 2.16355
+      },
+      {
+        "lat": 41.3832,
+        "lng": 2.1704
+      },
+      {
+        "lat": 41.3799,
+        "lng": 2.17385
+      },
+      {
+        "lat": 41.37715,
+        "lng": 2.17535
+      }
+    ]
+  },
+  {
+    "id": "cab-to-school",
+    "name": "Cab to San Gabriel",
+    "revealedIn": "san-gabriel-gate",
+    "characterIds": [
+      "daniel",
+      "fermin"
+    ],
+    "description": "After the café they take a cab out of the old city to the worn school.",
+    "path": [
+      {
+        "lat": 41.3833,
+        "lng": 2.171
+      },
+      {
+        "lat": 41.3885,
+        "lng": 2.145
+      },
+      {
+        "lat": 41.3932,
+        "lng": 2.1028
+      }
+    ]
+  },
+  {
+    "id": "bus-to-angel",
+    "name": "Bus to the Angel of Mist",
+    "revealedIn": "angel-of-mist",
+    "characterIds": [
+      "daniel"
+    ],
+    "description": "A late-afternoon bus out of the old city, with a storm behind it.",
+    "path": [
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      },
+      {
+        "lat": 41.3992,
+        "lng": 2.155
+      },
+      {
+        "lat": 41.4136,
+        "lng": 2.135
+      }
+    ]
+  },
+  {
+    "id": "to-the-hospice",
+    "name": "To Santa Lucía",
+    "revealedIn": "hospice-road",
+    "characterIds": [
+      "daniel",
+      "fermin"
+    ],
+    "description": "From the shop into the Born, to a hospice they had only been told about.",
+    "path": [
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      },
+      {
+        "lat": 41.3845,
+        "lng": 2.1768
+      },
+      {
+        "lat": 41.38415,
+        "lng": 2.18065
+      }
+    ]
+  },
+  {
+    "id": "hospice-to-barcelo",
+    "name": "From the road to Plaça Reial",
+    "revealedIn": "fermin-at-barcelo",
+    "characterIds": [
+      "daniel",
+      "fermin"
+    ],
+    "description": "A taxi, with Fermín insisting he will die in Bernarda’s arms.",
+    "path": [
+      {
+        "lat": 41.38415,
+        "lng": 2.18065
+      },
+      {
+        "lat": 41.3822,
+        "lng": 2.1778
+      },
+      {
+        "lat": 41.38025,
+        "lng": 2.17535
+      }
+    ]
+  },
+  {
+    "id": "to-the-funeral",
+    "name": "To the cemetery",
+    "revealedIn": "nuria-funeral",
+    "characterIds": [
+      "daniel"
+    ],
+    "description": "South, to a funeral her father will not attend.",
+    "path": [
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      },
+      {
+        "lat": 41.3708,
+        "lng": 2.163
+      },
+      {
+        "lat": 41.3555,
+        "lng": 2.1545
+      }
+    ]
+  },
+  {
+    "id": "last-dawn-walk",
+    "name": "Another dawn walk",
+    "revealedIn": "dawn-with-a-son",
+    "characterIds": [
+      "daniel",
+      "julian-child"
+    ],
+    "description": "The same streets as the first morning, with a smaller hand in his.",
+    "path": [
+      {
+        "lat": 41.38542,
+        "lng": 2.17192
+      },
+      {
+        "lat": 41.3824,
+        "lng": 2.17215
+      },
+      {
+        "lat": 41.3799,
+        "lng": 2.17385
+      },
+      {
+        "lat": 41.37715,
+        "lng": 2.17535
+      }
     ]
   }
 ]

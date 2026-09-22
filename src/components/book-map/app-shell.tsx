@@ -205,7 +205,7 @@ export function AppShell() {
             <p className="mt-0.5 text-xs text-[#c4b49a] sm:text-sm">
               Mapped by Alexander Kononov
               <span className="hidden sm:inline">
-                {" · "}Later streets stay off the map.
+                {" · "}The map only shows what you have already read.
               </span>
             </p>
           </div>

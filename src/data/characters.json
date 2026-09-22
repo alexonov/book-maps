@@ -27,7 +27,7 @@
     "id": "tomas",
     "name": "Tomás Aguilar",
     "revealedIn": "empty-catalogues",
-    "role": "Daniel’s inventive classmate. Mentioned, not yet on the map."
+    "role": "Daniel’s inventive classmate, later his closest friend. His father wants the army for him."
   },
   {
     "id": "barcelo",
@@ -52,5 +52,119 @@
     "name": "A watching stranger",
     "revealedIn": "watching-street",
     "role": "A limping figure Daniel thinks he sees near home. He is not yet sure the man is real."
+  },
+  {
+    "id": "bernarda",
+    "name": "Bernarda",
+    "revealedIn": "bernarda-door",
+    "role": "The Barcelós’ maid. She opens the door and keeps Daniel in clean collars."
+  },
+  {
+    "id": "neri",
+    "name": "Adrián Neri",
+    "revealedIn": "bernarda-door",
+    "role": "Clara’s music teacher. She speaks of him with admiration."
+  },
+  {
+    "id": "coubert",
+    "name": "Laín Coubert",
+    "revealedIn": "isaac-coubert",
+    "role": "The name Isaac gives the man who buys Carax in order to burn him. It is also the devil’s name in the novel Daniel chose."
+  },
+  {
+    "id": "fermin",
+    "name": "Fermín Romero de Torres",
+    "revealedIn": "fermin-wine",
+    "role": "A talkative man in a doorway. He offers wine and a story about Cuban espionage."
+  },
+  {
+    "id": "nuria",
+    "name": "Nuria Monfort",
+    "revealedIn": "isaac-coubert",
+    "role": "Isaac’s daughter. She once worked for Carax’s publisher and hid what she could."
+  },
+  {
+    "id": "fortuny",
+    "name": "Antoni Fortuny",
+    "revealedIn": "isaac-coubert",
+    "role": "A hatter. Isaac says he is Carax’s father, and that they were already estranged."
+  },
+  {
+    "id": "sophie",
+    "name": "Sophie Carax",
+    "revealedIn": "fortuny-dust",
+    "role": "Fortuny’s wife. The caretaker says the boy was not Fortuny’s son."
+  },
+  {
+    "id": "bea",
+    "name": "Beatriz Aguilar",
+    "revealedIn": "tomas-bea-named",
+    "role": "Tomás’s older sister. Daniel first knows her as a girl with a Falangist fiancé."
+  },
+  {
+    "id": "pablo",
+    "name": "Pablo Buendía",
+    "revealedIn": "tomas-bea-named",
+    "role": "Bea’s fiancé. A soldier who likes to talk about Spanish superiority."
+  },
+  {
+    "id": "penelope",
+    "name": "Penélope Aldaya",
+    "revealedIn": "carax-locked-room",
+    "role": "The name on a photograph in Carax’s old room, and on a letter from 1919."
+  },
+  {
+    "id": "jorge",
+    "name": "Jorge Aldaya",
+    "revealedIn": "tibidabo-gate",
+    "role": "Named in Penélope’s letter, and by a neighbour who remembers a son."
+  },
+  {
+    "id": "federico",
+    "name": "Don Federico",
+    "revealedIn": "fumero-counter",
+    "role": "The neighbourhood watchmaker. Kind, and already in Fumero’s mouth."
+  },
+  {
+    "id": "merceditas",
+    "name": "Merceditas",
+    "revealedIn": "federico-news",
+    "role": "A neighbour who brings apples and does not like the police."
+  },
+  {
+    "id": "miquel",
+    "name": "Miquel Moliner",
+    "revealedIn": "nuria-courtyard",
+    "role": "The other name on Nuria’s mailbox. Later a school friend of Carax."
+  },
+  {
+    "id": "fernando",
+    "name": "Father Fernando Ramos",
+    "revealedIn": "san-gabriel-gate",
+    "role": "A priest who was in Carax’s class and still keeps the school."
+  },
+  {
+    "id": "jacinta",
+    "name": "Jacinta",
+    "revealedIn": "jacinta-named",
+    "role": "Penélope’s governess. Fernando says she is at the Santa Lucía hospice. They have not met her yet."
+  },
+  {
+    "id": "palacios",
+    "name": "Enrique Palacios",
+    "revealedIn": "nuria-funeral",
+    "role": "A policeman who was in the rain. He says he wants to help."
+  },
+  {
+    "id": "fonseca",
+    "name": "Don Fonseca",
+    "revealedIn": "morgue-story",
+    "role": "The man at the morgue the night a body came in with a book and a passport."
+  },
+  {
+    "id": "julian-child",
+    "name": "Julián Sempere",
+    "revealedIn": "dawn-with-a-son",
+    "role": "A small boy taken to a hidden library at dawn, as his father once was."
   }
 ]
