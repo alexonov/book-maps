@@ -1,0 +1,50 @@
+[
+  {
+    "id": "cemetery",
+    "order": 1,
+    "part": "The Cemetery of Forgotten Books",
+    "title": "Dawn, 1945",
+    "yearLabel": "1945",
+    "synopsis": "A bookseller takes his son through dawn streets to a secret library. The boy chooses a forgotten novel and begins to read it that same night."
+  },
+  {
+    "id": "ashes-1",
+    "order": 2,
+    "part": "Days of Ashes",
+    "title": "Chapter 1",
+    "yearLabel": "1945",
+    "synopsis": "Carax is missing from every catalogue. Father and son consult Gustavo Barceló at Els Quatre Gats. The collector offers money. Daniel refuses."
+  },
+  {
+    "id": "ashes-2",
+    "order": 3,
+    "part": "Days of Ashes",
+    "title": "Chapter 2",
+    "yearLabel": "1945",
+    "synopsis": "At the Ateneo, Barceló examines the book beside his niece Clara. He says it is now unique. Clara is blind; Daniel cannot look away."
+  },
+  {
+    "id": "ashes-3",
+    "order": 4,
+    "part": "Days of Ashes",
+    "title": "Chapter 3",
+    "yearLabel": "1945",
+    "synopsis": "Clara tells how she first met Carax’s work in France, and how her father was murdered in Montjuïc Castle after the war began."
+  },
+  {
+    "id": "ashes-4",
+    "order": 5,
+    "part": "Days of Ashes",
+    "title": "Chapter 4",
+    "yearLabel": "1945",
+    "synopsis": "Someone has been buying Carax’s books in order to burn them. Clara’s mother learned a name: Javier Fumero, now a policeman. Daniel offers to read aloud."
+  },
+  {
+    "id": "ashes-5",
+    "order": 6,
+    "part": "Days of Ashes",
+    "title": "Chapter 5",
+    "yearLabel": "1945",
+    "synopsis": "A remembered pen he could not have. A question about the war that his father will not answer. On the street, Daniel thinks someone is watching."
+  }
+]

@@ -1,0 +1,244 @@
+[
+  {
+    "id": "sempere-bookshop",
+    "names": {
+      "ca": "Llibreria Sempere i Fills",
+      "es": "Librería Sempere e Hijos",
+      "en": "Sempere & Sons"
+    },
+    "type": "bookshop",
+    "lat": 41.38542,
+    "lng": 2.17192,
+    "revealedIn": "cemetery",
+    "activeIn": ["cemetery", "ashes-1", "ashes-5"],
+    "characterIds": ["daniel", "mr-sempere"],
+    "blurb": "Father and son live above this modest second-hand bookshop on Santa Anna Street, between the Rambla and Portal de l’Àngel.",
+    "notesByChapter": [
+      {
+        "chapterId": "ashes-1",
+        "text": "Daniel searches his father’s catalogues for Julián Carax and finds nothing — not even a rumour."
+      },
+      {
+        "chapterId": "ashes-5",
+        "text": "Back in their rooms, Daniel tells his father he has promised to read to Clara, then asks about the war, and is told it is better left alone."
+      }
+    ],
+    "address": "Carrer de Santa Anna (literary; no numbered shop survives)",
+    "neighborhood": "Barri Gòtic",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38542&mlon=2.17192#map=18/41.38542/2.17192",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38542,2.17192"
+  },
+  {
+    "id": "santa-anna-church",
+    "names": {
+      "ca": "Església de Santa Anna",
+      "es": "Iglesia de Santa Ana",
+      "en": "Church of Santa Anna"
+    },
+    "type": "institution",
+    "lat": 41.3855,
+    "lng": 2.17148,
+    "revealedIn": "cemetery",
+    "activeIn": [],
+    "characterIds": ["daniel", "mr-sempere"],
+    "blurb": "The medieval church on the Semperes’ street — neighborhood stone, not yet a stage for the plot.",
+    "address": "Carrer de Santa Anna / Placeta de Ramon Amadeu",
+    "neighborhood": "Barri Gòtic",
+    "fictional": false,
+    "approximate": false,
+    "background": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38550&mlon=2.17148#map=18/41.38550/2.17148",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38550,2.17148"
+  },
+  {
+    "id": "rambla-santa-monica",
+    "names": {
+      "ca": "Rambla de Santa Mònica",
+      "es": "Rambla de Santa Mónica",
+      "en": "Rambla de Santa Mònica"
+    },
+    "type": "street",
+    "lat": 41.37685,
+    "lng": 2.1769,
+    "revealedIn": "cemetery",
+    "activeIn": ["cemetery"],
+    "characterIds": ["daniel", "mr-sempere"],
+    "blurb": "Early summer, 1945. Dawn pours over the lower Rambla as father and son walk a Barcelona of ashen skies.",
+    "address": "La Rambla, toward the port",
+    "neighborhood": "El Raval / Gòtic",
+    "fictional": false,
+    "approximate": false,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.37685&mlon=2.17690#map=17/41.37685/2.17690",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.37685,2.17690"
+  },
+  {
+    "id": "cemetery-forgotten-books",
+    "names": {
+      "ca": "Cementiri dels Llibres Oblidats",
+      "es": "Cementerio de los Libros Olvidados",
+      "en": "Cemetery of Forgotten Books"
+    },
+    "type": "library",
+    "lat": 41.37715,
+    "lng": 2.17535,
+    "revealedIn": "cemetery",
+    "activeIn": ["cemetery"],
+    "characterIds": ["daniel", "mr-sempere", "isaac", "carax"],
+    "blurb": "A secret labyrinth of unwanted books, known only to a few booksellers. Daniel chooses one volume and promises to guard it.",
+    "address": "Carrer de l’Arc del Teatre (traditional literary placement)",
+    "neighborhood": "El Raval",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.37715&mlon=2.17535#map=18/41.37715/2.17535",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.37715,2.17535"
+  },
+  {
+    "id": "quatre-gats",
+    "names": {
+      "ca": "Els Quatre Gats",
+      "es": "Els Quatre Gats",
+      "en": "The Four Cats"
+    },
+    "type": "institution",
+    "lat": 41.38578,
+    "lng": 2.17367,
+    "revealedIn": "ashes-1",
+    "activeIn": ["ashes-1"],
+    "characterIds": ["daniel", "mr-sempere", "barcelo"],
+    "blurb": "Barceló’s after-work haunt — and the café where Daniel’s parents once met. Tonight the collector examines a book he wants to buy.",
+    "address": "Carrer de Montsió, 3",
+    "neighborhood": "Barri Gòtic",
+    "fictional": false,
+    "approximate": false,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38578&mlon=2.17367#map=18/41.38578/2.17367",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38578,2.17367"
+  },
+  {
+    "id": "ateneu",
+    "names": {
+      "ca": "Ateneu Barcelonès",
+      "es": "Ateneo Barcelonés",
+      "en": "Ateneo Library"
+    },
+    "type": "library",
+    "lat": 41.3845,
+    "lng": 2.17355,
+    "revealedIn": "ashes-2",
+    "activeIn": ["ashes-2", "ashes-3", "ashes-4"],
+    "characterIds": ["daniel", "barcelo", "clara", "carax"],
+    "blurb": "Daniel finds Barceló in the library beside a woman in white. The collector says Carax’s last novel is now unique — the rest have been burned.",
+    "notesByChapter": [
+      {
+        "chapterId": "ashes-3",
+        "text": "Here Clara traces Daniel’s face with her hands and begins the story of Carax, Provence, and her father’s death."
+      },
+      {
+        "chapterId": "ashes-4",
+        "text": "The conversation ends with a rumour of a burner of books, and with Daniel offering to come back and read to her."
+      }
+    ],
+    "address": "Carrer de la Canuda, 6",
+    "neighborhood": "Barri Gòtic",
+    "fictional": false,
+    "approximate": false,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38450&mlon=2.17355#map=18/41.38450/2.17355",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38450,2.17355"
+  },
+  {
+    "id": "montjuic-castle",
+    "names": {
+      "ca": "Castell de Montjuïc",
+      "es": "Castillo de Montjuic",
+      "en": "Montjuïc Castle"
+    },
+    "type": "institution",
+    "lat": 41.3634,
+    "lng": 2.1661,
+    "revealedIn": "ashes-3",
+    "activeIn": [],
+    "characterIds": ["clara", "fumero"],
+    "blurb": "Clara’s father was jailed here and murdered after friends betrayed him. Daniel hears this as history, not as a place he has walked.",
+    "notesByChapter": [
+      {
+        "chapterId": "ashes-4",
+        "text": "Clara’s mother hired an investigator. The name attached to the killing is Javier Fumero — once a hired thug, now a feared policeman."
+      },
+      {
+        "chapterId": "ashes-5",
+        "text": "Daniel asks his father whether people often disappeared in the castle during the war. Mr. Sempere will not speak of it."
+      }
+    ],
+    "address": "Carretera de Montjuïc, 66",
+    "neighborhood": "Montjuïc",
+    "fictional": false,
+    "approximate": false,
+    "background": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.36340&mlon=2.16610#map=16/41.36340/2.16610",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.36340,2.16610"
+  },
+  {
+    "id": "barcelo-apartment",
+    "names": {
+      "ca": "Pis Barceló",
+      "es": "Piso Barceló",
+      "en": "Barceló apartment"
+    },
+    "type": "home",
+    "lat": 41.38025,
+    "lng": 2.17535,
+    "revealedIn": "ashes-5",
+    "activeIn": ["ashes-5"],
+    "characterIds": ["daniel", "barcelo", "clara"],
+    "blurb": "A palatial flat overlooking Plaça Reial. Daniel has just come from this house, carrying Clara’s wartime story home to his father.",
+    "address": "Plaça Reial (literary apartment; the square is real)",
+    "neighborhood": "Barri Gòtic",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38025&mlon=2.17535#map=18/41.38025/2.17535",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38025,2.17535"
+  },
+  {
+    "id": "pen-shop",
+    "names": {
+      "ca": "Botiga de plomes (Baixada de la Llibreteria)",
+      "es": "Tienda de plumas (Bajada de la Libretería)",
+      "en": "The fountain-pen shop"
+    },
+    "type": "event",
+    "lat": 41.38308,
+    "lng": 2.17735,
+    "revealedIn": "ashes-5",
+    "activeIn": ["ashes-5"],
+    "characterIds": ["daniel", "mr-sempere"],
+    "blurb": "In a shop window Daniel once saw a fountain pen said to have belonged to Victor Hugo. His father could not buy it. The memory returns while he thinks about writing — and about the war.",
+    "address": "Baixada de la Llibreteria, 2 (traditional identification with Papirum)",
+    "neighborhood": "Barri Gòtic",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38308&mlon=2.17735#map=18/41.38308/2.17735",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38308,2.17735"
+  },
+  {
+    "id": "watching-figure",
+    "names": {
+      "ca": "Una figura al carrer",
+      "es": "Una figura en la calle",
+      "en": "A figure in the street"
+    },
+    "type": "event",
+    "lat": 41.3852,
+    "lng": 2.17155,
+    "revealedIn": "ashes-5",
+    "activeIn": ["ashes-5"],
+    "characterIds": ["daniel", "stranger"],
+    "blurb": "Near home, Daniel thinks he is being watched. A limping figure in the street. By morning he will try to believe he imagined it.",
+    "address": "Carrer de Santa Anna, near the bookshop",
+    "neighborhood": "Barri Gòtic",
+    "fictional": true,
+    "approximate": true,
+    "osmUrl": "https://www.openstreetmap.org/?mlat=41.38520&mlon=2.17155#map=18/41.38520/2.17155",
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38520,2.17155"
+  }
+]

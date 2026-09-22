@@ -1,0 +1,55 @@
+[
+  {
+    "id": "dawn-walk",
+    "name": "Dawn walk to the Cemetery",
+    "revealedIn": "cemetery",
+    "characterIds": ["daniel", "mr-sempere"],
+    "description": "From the rooms above the bookshop, father and son cross a sleeping city toward a door in the Raval.",
+    "path": [
+      { "lat": 41.38542, "lng": 2.17192 },
+      { "lat": 41.38455, "lng": 2.17055 },
+      { "lat": 41.3824, "lng": 2.17215 },
+      { "lat": 41.3799, "lng": 2.17385 },
+      { "lat": 41.37755, "lng": 2.17655 },
+      { "lat": 41.37715, "lng": 2.17535 }
+    ]
+  },
+  {
+    "id": "to-quatre-gats",
+    "name": "Sempere to Els Quatre Gats",
+    "revealedIn": "ashes-1",
+    "characterIds": ["daniel", "mr-sempere", "barcelo"],
+    "description": "A short walk from Santa Anna Street to Barceló’s habitual café on Carrer de Montsió.",
+    "path": [
+      { "lat": 41.38542, "lng": 2.17192 },
+      { "lat": 41.3857, "lng": 2.17285 },
+      { "lat": 41.38578, "lng": 2.17367 }
+    ]
+  },
+  {
+    "id": "to-ateneo",
+    "name": "Daniel walks to the Ateneo",
+    "revealedIn": "ashes-2",
+    "characterIds": ["daniel", "barcelo", "clara"],
+    "description": "The next day Daniel carries the book to the Ateneo library, where Barceló has asked him to come.",
+    "path": [
+      { "lat": 41.38542, "lng": 2.17192 },
+      { "lat": 41.38495, "lng": 2.1727 },
+      { "lat": 41.3845, "lng": 2.17355 }
+    ]
+  },
+  {
+    "id": "home-from-barcelo",
+    "name": "Home from Plaça Reial",
+    "revealedIn": "ashes-5",
+    "characterIds": ["daniel"],
+    "description": "Daniel returns from the Barceló apartment preoccupied, crossing the old city toward Santa Anna Street.",
+    "path": [
+      { "lat": 41.38025, "lng": 2.17535 },
+      { "lat": 41.38145, "lng": 2.1742 },
+      { "lat": 41.3832, "lng": 2.1724 },
+      { "lat": 41.38455, "lng": 2.17055 },
+      { "lat": 41.38542, "lng": 2.17192 }
+    ]
+  }
+]

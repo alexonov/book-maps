@@ -1,0 +1,56 @@
+[
+  {
+    "id": "daniel",
+    "name": "Daniel Sempere",
+    "revealedIn": "cemetery",
+    "role": "Ten-year-old narrator, still trying to hold on to his mother’s face."
+  },
+  {
+    "id": "mr-sempere",
+    "name": "Mr. Sempere",
+    "revealedIn": "cemetery",
+    "role": "Widowed bookseller who inherited the shop, and the Cemetery’s secret, from his father."
+  },
+  {
+    "id": "isaac",
+    "name": "Isaac Monfort",
+    "revealedIn": "cemetery",
+    "role": "Keeper of the Cemetery of Forgotten Books."
+  },
+  {
+    "id": "carax",
+    "name": "Julián Carax",
+    "revealedIn": "cemetery",
+    "role": "Unknown novelist. Daniel knows him only as the name on a spine."
+  },
+  {
+    "id": "tomas",
+    "name": "Tomás Aguilar",
+    "revealedIn": "ashes-1",
+    "role": "Daniel’s inventive classmate. Mentioned, not yet on the map."
+  },
+  {
+    "id": "barcelo",
+    "name": "Gustavo Barceló",
+    "revealedIn": "ashes-1",
+    "role": "Wealthy antiquarian with an elephantine memory for books."
+  },
+  {
+    "id": "clara",
+    "name": "Clara Barceló",
+    "revealedIn": "ashes-2",
+    "role": "Barceló’s blind niece, twenty-six, and an expert on Carax."
+  },
+  {
+    "id": "fumero",
+    "name": "Inspector Fumero",
+    "revealedIn": "ashes-4",
+    "role": "Named as a wartime killer, now a policeman. Clara’s mother learned this while investigating."
+  },
+  {
+    "id": "stranger",
+    "name": "A watching stranger",
+    "revealedIn": "ashes-5",
+    "role": "A limping figure Daniel thinks he sees near home. He is not yet sure the man is real."
+  }
+]

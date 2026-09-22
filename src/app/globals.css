@@ -1,0 +1,237 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "leaflet/dist/leaflet.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-source-serif), "Source Serif 4", serif;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", serif;
+  --font-mono: ui-monospace, monospace;
+  --font-heading: var(--font-cormorant), "Cormorant Garamond", serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(0.16 0.02 55);
+  --foreground: oklch(0.93 0.03 85);
+  --card: oklch(0.2 0.02 55);
+  --card-foreground: oklch(0.93 0.03 85);
+  --popover: oklch(0.2 0.025 55);
+  --popover-foreground: oklch(0.93 0.03 85);
+  --primary: oklch(0.78 0.08 80);
+  --primary-foreground: oklch(0.18 0.02 55);
+  --secondary: oklch(0.28 0.03 55);
+  --secondary-foreground: oklch(0.9 0.04 80);
+  --muted: oklch(0.26 0.02 55);
+  --muted-foreground: oklch(0.74 0.04 80);
+  --accent: oklch(0.3 0.04 55);
+  --accent-foreground: oklch(0.93 0.03 85);
+  --destructive: oklch(0.63 0.16 30);
+  --border: oklch(0.45 0.05 75 / 40%);
+  --input: oklch(0.35 0.03 60);
+  --ring: oklch(0.78 0.08 80);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.16 0.02 55);
+  --foreground: oklch(0.93 0.03 85);
+  --card: oklch(0.2 0.02 55);
+  --card-foreground: oklch(0.93 0.03 85);
+  --popover: oklch(0.2 0.025 55);
+  --popover-foreground: oklch(0.93 0.03 85);
+  --primary: oklch(0.78 0.08 80);
+  --primary-foreground: oklch(0.18 0.02 55);
+  --secondary: oklch(0.28 0.03 55);
+  --secondary-foreground: oklch(0.9 0.04 80);
+  --muted: oklch(0.26 0.02 55);
+  --muted-foreground: oklch(0.74 0.04 80);
+  --accent: oklch(0.3 0.04 55);
+  --accent-foreground: oklch(0.93 0.03 85);
+  --destructive: oklch(0.63 0.16 30);
+  --border: oklch(0.45 0.05 75 / 40%);
+  --input: oklch(0.35 0.03 60);
+  --ring: oklch(0.78 0.08 80);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+.book-map.leaflet-container {
+  background: #120e0b;
+  font-family: inherit;
+  isolation: isolate;
+  z-index: 0;
+}
+
+.book-map .leaflet-tile-pane {
+  filter: invert(0.86) sepia(0.42) saturate(0.85) hue-rotate(352deg)
+    brightness(1.05) contrast(1.08);
+}
+
+.book-map .leaflet-control-attribution {
+  background: rgb(18 14 11 / 78%) !important;
+  color: #c4b49a;
+  font-size: 10px;
+}
+
+.book-map .leaflet-control-attribution a {
+  color: #c4a574;
+}
+
+.book-map .leaflet-control-zoom a {
+  background: #1a1410 !important;
+  color: #f0e6d4 !important;
+  border-color: rgb(196 165 116 / 35%) !important;
+}
+
+.bm-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.bm-marker-core,
+.bm-legend-swatch {
+  display: flex;
+  height: 32px;
+  width: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgb(240 230 212 / 55%);
+  font-family: var(--font-cinzel), serif;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #120e0b;
+  box-shadow: 0 1px 6px rgb(18 14 11 / 65%);
+}
+
+.bm-legend-swatch {
+  height: 18px;
+  width: 18px;
+  font-size: 9px;
+}
+
+.bm-marker--bookshop .bm-marker-core,
+.bm-legend-swatch.bm-marker--bookshop {
+  background: #d4a017;
+}
+
+.bm-marker--library .bm-marker-core,
+.bm-legend-swatch.bm-marker--library {
+  background: #c4a574;
+}
+
+.bm-marker--home .bm-marker-core,
+.bm-legend-swatch.bm-marker--home {
+  background: #b56b5a;
+}
+
+.bm-marker--street .bm-marker-core,
+.bm-legend-swatch.bm-marker--street {
+  background: #8a9a6b;
+}
+
+.bm-marker--institution .bm-marker-core,
+.bm-legend-swatch.bm-marker--institution {
+  background: #7f8c8a;
+}
+
+.bm-marker--event .bm-marker-core,
+.bm-legend-swatch.bm-marker--event {
+  background: #8c3a32;
+  color: #f0e6d4;
+}
+
+.bm-marker.is-background .bm-marker-core {
+  opacity: 0.72;
+  border-style: dashed;
+}
+
+.bm-marker.is-current .bm-marker-core {
+  box-shadow:
+    0 0 0 2px #120e0b,
+    0 0 0 4px #e8c989,
+    0 0 16px rgb(232 201 137 / 55%);
+}
+
+.bm-marker.is-selected .bm-marker-core {
+  transform: scale(1.12);
+  box-shadow:
+    0 0 0 2px #120e0b,
+    0 0 0 5px #f0e6d4;
+}
