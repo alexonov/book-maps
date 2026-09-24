@@ -183,7 +183,10 @@ export function AppShell() {
       visibleCount={places.length}
       isCurrent={selected?.id === focusLocationId && !walkBack}
       walkBack={walkBack}
-      onClear={() => setSelectedId(null)}
+      onClear={() => {
+        setSelectedId(null);
+        setMobileOpen(false);
+      }}
       onMarkHere={(id) => {
         setHereId(id);
         setWalkBack(false);
@@ -321,16 +324,23 @@ export function AppShell() {
           </div>
         </section>
 
-        <aside className="relative z-20 hidden w-[22.5rem] shrink-0 border-l border-[#c4a574]/20 bg-[#1a1410] lg:block">
+        <aside className="relative z-20 hidden w-[22.5rem] shrink-0 overflow-y-auto overscroll-contain border-l border-[#c4a574]/20 bg-[#1a1410] lg:block">
           {inspector}
         </aside>
       </div>
 
       {isMobile ? (
-        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+        <Sheet
+          open={mobileOpen}
+          onOpenChange={(open) => {
+            setMobileOpen(open);
+            if (!open) setSelectedId(null);
+          }}
+        >
           <SheetContent
             side="bottom"
-            className="z-[2000] h-[min(78dvh,36rem)] border-[#c4a574]/25 bg-[#1a1410] p-0"
+            showCloseButton={false}
+            className="z-[2000] max-h-[min(78dvh,36rem)] gap-0 overflow-y-auto overscroll-contain border-[#c4a574]/25 bg-[#1a1410] p-0 data-[side=bottom]:h-auto data-[side=bottom]:max-h-[min(78dvh,36rem)]"
           >
             <SheetTitle className="sr-only">Place inspector</SheetTitle>
             {inspector}

@@ -133,9 +133,9 @@ export function ProgressControl({
       <Sheet open={sheetOpen} onOpenChange={onSheetOpenChange}>
         <SheetContent
           side="top"
-          className="z-[2000] max-h-[min(82dvh,40rem)] gap-0 border-[#c4a574]/25 bg-[#1a1410] p-0"
+          className="z-[2000] max-h-[min(82dvh,40rem)] gap-0 overflow-hidden border-[#c4a574]/25 bg-[#1a1410] p-0 data-[side=top]:max-h-[min(82dvh,40rem)]"
         >
-          <div className="border-b border-[#c4a574]/20 px-4 py-3 md:px-6">
+          <div className="shrink-0 border-b border-[#c4a574]/20 px-4 py-3 md:px-6">
             <SheetTitle className="font-serif text-xl text-[#f0e6d4]">
               Your place in the book
             </SheetTitle>
@@ -299,7 +299,7 @@ function ProgressSheetBody({
   );
 
   return (
-    <div className="overflow-y-auto px-4 py-4 md:px-6">
+    <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4 md:px-6">
       {behind ? (
         <div className="mb-4 flex items-center justify-between gap-3 rounded-sm border border-[#c4a574]/25 bg-[#120e0b] px-3 py-2">
           <p className="text-sm text-[#d7c7a8]">You stepped back from your latest moment.</p>

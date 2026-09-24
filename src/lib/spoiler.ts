@@ -1,5 +1,5 @@
-import type { Beat, Character, Journey, Location } from "@/data/types";
-import { beatOrder } from "@/lib/beats";
+import type { Beat, BeatNote, Character, Journey, Location } from "@/data/types";
+import { beatOrder, visitBeatId } from "@/lib/beats";
 
 export function isRevealed(
   beats: Beat[],
@@ -51,12 +51,14 @@ export function visibleJourneys(
   });
 }
 
-export function notesForProgress(
+export function noteForVisit(
   location: Location,
   beats: Beat[],
   progressId: string,
-): string[] {
-  return (location.notesByBeat ?? [])
-    .filter((note) => isRevealed(beats, note.beatId, progressId))
-    .map((note) => note.text);
+): BeatNote | undefined {
+  const visitId = visitBeatId(location, beats, progressId);
+  const notes = (location.notesByBeat ?? []).filter((note) =>
+    isRevealed(beats, note.beatId, visitId),
+  );
+  return notes[notes.length - 1];
 }

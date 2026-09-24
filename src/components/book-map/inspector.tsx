@@ -2,12 +2,11 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import type { Beat, Chapter, Character, Location } from "@/data/types";
 import { beatById, chapterById } from "@/lib/beats";
 import { MARKER_LABELS } from "@/lib/markers";
-import { notesForProgress } from "@/lib/spoiler";
+import { noteForVisit } from "@/lib/spoiler";
 import { ExternalLink, MapPin, X } from "lucide-react";
 
 type InspectorProps = {
@@ -39,7 +38,7 @@ export function Inspector({
 }: InspectorProps) {
   if (!location) {
     return (
-      <div className="flex h-full flex-col gap-4 p-5">
+      <div className="flex flex-col gap-4 p-5">
         <h2 className="font-serif text-2xl leading-snug text-[#f0e6d4]">
           Choose a pin
         </h2>
@@ -63,30 +62,34 @@ export function Inspector({
   const visiblePeople = characters.filter((character) =>
     location.characterIds.includes(character.id),
   );
-  const extraNotes = notesForProgress(location, beats, noteProgressId);
+  const visitNote = noteForVisit(location, beats, noteProgressId);
+  const visitBeat = visitNote
+    ? beatById(beats, visitNote.beatId)
+    : undefined;
 
   return (
-    <ScrollArea className="h-full">
-      <div className="flex flex-col gap-4 p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="text-[0.68rem] tracking-[0.28em] text-[#c4a574] uppercase">
-              {MARKER_LABELS[location.type]}
-            </p>
-            <h2 className="mt-1 font-serif text-2xl leading-tight text-[#f0e6d4]">
-              {location.names.en}
-            </h2>
-          </div>
-          <Button
-            variant="ghost"
-            size="icon-sm"
-            onClick={onClear}
-            aria-label="Clear selection"
-            className="text-[#c4b49a] hover:text-[#f0e6d4]"
-          >
-            <X />
-          </Button>
+    <div className="flex flex-col">
+      <div className="sticky top-0 z-10 flex items-start justify-between gap-3 bg-[#1a1410]/95 px-5 pt-5 pb-3 backdrop-blur-sm">
+        <div className="min-w-0">
+          <p className="text-[0.68rem] tracking-[0.28em] text-[#c4a574] uppercase">
+            {MARKER_LABELS[location.type]}
+          </p>
+          <h2 className="mt-1 font-serif text-2xl leading-tight text-[#f0e6d4]">
+            {location.names.en}
+          </h2>
         </div>
+        <Button
+          variant="ghost"
+          size="icon-sm"
+          onClick={onClear}
+          aria-label="Close details"
+          className="shrink-0 text-[#c4b49a] hover:text-[#f0e6d4]"
+        >
+          <X />
+        </Button>
+      </div>
+
+      <div className="flex flex-col gap-4 px-5 pb-6">
 
         <div className="space-y-1 text-sm text-[#d7c7a8]">
           <p>
@@ -134,12 +137,17 @@ export function Inspector({
           {location.blurb}
         </p>
 
-        {extraNotes.length > 0 ? (
-          <ul className="space-y-2 text-sm leading-relaxed text-[#d7c7a8]">
-            {extraNotes.map((note) => (
-              <li key={note}>{note}</li>
-            ))}
-          </ul>
+        {visitNote ? (
+          <div>
+            {visitBeat ? (
+              <p className="text-[0.68rem] tracking-[0.22em] text-[#c4a574] uppercase">
+                At {visitBeat.title}
+              </p>
+            ) : null}
+            <p className="mt-1 text-sm leading-relaxed text-[#d7c7a8]">
+              {visitNote.text}
+            </p>
+          </div>
         ) : null}
 
         {!walkBack && !isCurrent ? (
@@ -175,14 +183,9 @@ export function Inspector({
               No named characters here yet.
             </p>
           ) : (
-            <ul className="mt-2 space-y-1 text-sm text-[#e4d5b8]">
-              {visiblePeople.map((person) => (
-                <li key={person.id}>
-                  <span className="text-[#f0e6d4]">{person.name}</span>
-                  <span className="text-[#c4b49a]"> — {person.role}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="mt-1 text-sm text-[#e4d5b8]">
+              {visiblePeople.map((person) => person.name).join(" · ")}
+            </p>
           )}
         </div>
 
@@ -205,6 +208,6 @@ export function Inspector({
           ) : null}
         </div>
       </div>
-    </ScrollArea>
+    </div>
   );
 }
