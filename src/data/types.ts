@@ -42,12 +42,6 @@ export type Beat = {
   synopsis: string;
 };
 
-export type BeatNote = {
-  /** Beat at which this extra sentence becomes safe to show. */
-  beatId: string;
-  text: string;
-};
-
 export type Location = {
   id: string;
   names: PlaceNames;
@@ -59,8 +53,8 @@ export type Location = {
   /** Beats where this place is the scene of the action. */
   activeIn: string[];
   characterIds: string[];
+  /** Timeless gazetteer copy. Plot lives on the beat chip, not here. */
   blurb: string;
-  notesByBeat?: BeatNote[];
   address?: string;
   neighborhood?: string;
   fictional: boolean;
@@ -69,6 +63,10 @@ export type Location = {
   background?: boolean;
   streetViewUrl?: string;
   osmUrl?: string;
+  /** Local still of a real building or the street a literary pin sits on. */
+  photoSrc?: string;
+  photoCaption?: string;
+  photoCredit?: string;
 };
 
 export type Journey = {

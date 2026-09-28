@@ -16,7 +16,6 @@ import {
   beatOrder,
   lastBeatForChapter,
   remainingSteps,
-  visitBeatId,
 } from "@/lib/beats";
 import {
   getProgress,
@@ -50,7 +49,7 @@ export function AppShell() {
   const [undoState, setUndoState] = useState<ProgressState | null>(null);
   const [characterIds, setCharacterIds] = useState<string[]>([]);
   const [showBackground, setShowBackground] = useState(true);
-  const [showRoutes, setShowRoutes] = useState(true);
+  const [showRoutes, setShowRoutes] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [progressOpen, setProgressOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -90,7 +89,7 @@ export function AppShell() {
   const routes = useMemo(
     () =>
       visibleJourneys(catalog.beats, catalog.journeys, progressId, {
-        showRoutes,
+        showAllRoutes: showRoutes,
         characterIds: activeCharacterIds,
       }),
     [activeCharacterIds, progressId, showRoutes],
@@ -100,9 +99,13 @@ export function AppShell() {
   const focusLocationId = hereId ?? currentBeat?.currentLocationId ?? null;
   const filterActive = activeCharacterIds.length > 0;
   const canAdvance = remainingSteps(catalog.beats, furthestId) > 0;
-  const noteProgressId = walkBack && selected
-    ? visitBeatId(selected, catalog.beats, progressId)
-    : progressId;
+  const currentJourneyId =
+    catalog.journeys.find((journey) => journey.revealedIn === progressId)?.id ??
+    null;
+  const momentCaption =
+    selected && selected.id === focusLocationId && currentBeat
+      ? `${walkBack ? "Then" : "Now"} · ${currentBeat.title}`
+      : null;
 
   function commit(
     next: ProgressState,
@@ -178,11 +181,12 @@ export function AppShell() {
       beats={catalog.beats}
       chapters={catalog.chapters}
       characters={people}
-      noteProgressId={noteProgressId}
       currentSynopsis={currentBeat?.synopsis ?? ""}
+      momentCaption={momentCaption}
       visibleCount={places.length}
       isCurrent={selected?.id === focusLocationId && !walkBack}
       walkBack={walkBack}
+      showPhoto={!isMobile}
       onClear={() => {
         setSelectedId(null);
         setMobileOpen(false);
@@ -240,6 +244,7 @@ export function AppShell() {
             <BookMapView
               locations={places}
               journeys={routes}
+              currentJourneyId={currentJourneyId}
               selectedId={selected?.id ?? null}
               focusLocationId={focusLocationId}
               walkBack={walkBack}
@@ -292,7 +297,7 @@ export function AppShell() {
                   checked={showRoutes}
                   onCheckedChange={setShowRoutes}
                 />
-                Routes so far
+                All routes so far
               </label>
               <label className="flex items-center gap-2">
                 <Switch

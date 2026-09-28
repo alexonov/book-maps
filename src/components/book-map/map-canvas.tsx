@@ -107,6 +107,7 @@ function markerIcon(
 export default function MapCanvas({
   locations,
   journeys,
+  currentJourneyId,
   selectedId,
   focusLocationId,
   walkBack,
@@ -144,18 +145,21 @@ export default function MapCanvas({
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <ZoomControl position="bottomleft" />
-      {journeys.map((journey) => (
-        <Polyline
-          key={journey.id}
-          positions={journey.path.map((point) => [point.lat, point.lng])}
-          pathOptions={{
-            color: walkBack ? "#f0e6d4" : "#e4c27a",
-            weight: walkBack ? 5 : 4,
-            opacity: walkBack ? 1 : 0.95,
-            dashArray: "7 9",
-          }}
-        />
-      ))}
+      {journeys.map((journey) => {
+        const current = journey.id === currentJourneyId;
+        return (
+          <Polyline
+            key={journey.id}
+            positions={journey.path.map((point) => [point.lat, point.lng])}
+            pathOptions={{
+              color: current ? (walkBack ? "#f0e6d4" : "#e4c27a") : "#8a7350",
+              weight: current ? 4 : 2,
+              opacity: current ? 0.95 : 0.28,
+              dashArray: current ? "7 9" : "3 10",
+            }}
+          />
+        );
+      })}
       {locations.map((location) => (
         <Marker
           key={location.id}

@@ -27,6 +27,7 @@ export function MapLegend() {
         ))}
       </ul>
       <p className="mt-1.5 text-[#c4a574]/90">Gold ring = current setting</p>
+      <p className="text-[#c4a574]/90">Gold line = this walk</p>
     </div>
   );
 }

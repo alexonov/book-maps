@@ -6,6 +6,7 @@ import type { Journey, Location } from "@/data/types";
 export type BookMapViewProps = {
   locations: Location[];
   journeys: Journey[];
+  currentJourneyId: string | null;
   selectedId: string | null;
   focusLocationId: string | null;
   walkBack: boolean;

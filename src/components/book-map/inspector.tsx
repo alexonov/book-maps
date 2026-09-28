@@ -6,19 +6,20 @@ import { Separator } from "@/components/ui/separator";
 import type { Beat, Chapter, Character, Location } from "@/data/types";
 import { beatById, chapterById } from "@/lib/beats";
 import { MARKER_LABELS } from "@/lib/markers";
-import { noteForVisit } from "@/lib/spoiler";
 import { ExternalLink, MapPin, X } from "lucide-react";
+import Image from "next/image";
 
 type InspectorProps = {
   location: Location | null;
   beats: Beat[];
   chapters: Chapter[];
   characters: Character[];
-  noteProgressId: string;
   currentSynopsis: string;
+  momentCaption: string | null;
   visibleCount: number;
   isCurrent: boolean;
   walkBack: boolean;
+  showPhoto: boolean;
   onClear: () => void;
   onMarkHere: (locationId: string) => void;
 };
@@ -28,11 +29,12 @@ export function Inspector({
   beats,
   chapters,
   characters,
-  noteProgressId,
   currentSynopsis,
+  momentCaption,
   visibleCount,
   isCurrent,
   walkBack,
+  showPhoto,
   onClear,
   onMarkHere,
 }: InspectorProps) {
@@ -62,10 +64,6 @@ export function Inspector({
   const visiblePeople = characters.filter((character) =>
     location.characterIds.includes(character.id),
   );
-  const visitNote = noteForVisit(location, beats, noteProgressId);
-  const visitBeat = visitNote
-    ? beatById(beats, visitNote.beatId)
-    : undefined;
 
   return (
     <div className="flex flex-col">
@@ -77,6 +75,11 @@ export function Inspector({
           <h2 className="mt-1 font-serif text-2xl leading-tight text-[#f0e6d4]">
             {location.names.en}
           </h2>
+          {momentCaption ? (
+            <p className="mt-1 text-[0.68rem] tracking-[0.18em] text-[#e8c989] uppercase">
+              {momentCaption}
+            </p>
+          ) : null}
         </div>
         <Button
           variant="ghost"
@@ -90,7 +93,6 @@ export function Inspector({
       </div>
 
       <div className="flex flex-col gap-4 px-5 pb-6">
-
         <div className="space-y-1 text-sm text-[#d7c7a8]">
           <p>
             <span className="text-[#c4a574]">Catalan · </span>
@@ -123,6 +125,24 @@ export function Inspector({
           )}
         </div>
 
+        {showPhoto && location.photoSrc ? (
+          <figure className="-mx-5">
+            <Image
+              src={location.photoSrc}
+              alt={location.photoCaption ?? location.names.en}
+              width={960}
+              height={640}
+              className="h-44 w-full object-cover"
+            />
+            <figcaption className="mt-1.5 px-5 text-[0.7rem] leading-relaxed text-[#9a8b73]">
+              {location.photoCaption ? `${location.photoCaption} ` : null}
+              {location.photoCredit ? (
+                <span>Photo: {location.photoCredit}</span>
+              ) : null}
+            </figcaption>
+          </figure>
+        ) : null}
+
         {location.address ? (
           <p className="flex items-start gap-2 text-sm text-[#c4b49a]">
             <MapPin className="mt-0.5 size-3.5 shrink-0" />
@@ -136,19 +156,6 @@ export function Inspector({
         <p className="font-serif text-base leading-relaxed text-[#f0e6d4]">
           {location.blurb}
         </p>
-
-        {visitNote ? (
-          <div>
-            {visitBeat ? (
-              <p className="text-[0.68rem] tracking-[0.22em] text-[#c4a574] uppercase">
-                At {visitBeat.title}
-              </p>
-            ) : null}
-            <p className="mt-1 text-sm leading-relaxed text-[#d7c7a8]">
-              {visitNote.text}
-            </p>
-          </div>
-        ) : null}
 
         {!walkBack && !isCurrent ? (
           <Button
@@ -176,7 +183,7 @@ export function Inspector({
 
         <div>
           <p className="text-[0.68rem] tracking-[0.22em] text-[#c4a574] uppercase">
-            Characters present
+            People named here
           </p>
           {visiblePeople.length === 0 ? (
             <p className="mt-1 text-sm text-[#c4b49a]">
