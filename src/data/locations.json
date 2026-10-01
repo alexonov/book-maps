@@ -139,7 +139,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.37715&mlon=2.17535#map=18/41.37715/2.17535",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.37715,2.17535"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.37715,2.17535",
+    "photoSrc": "/places/arc-del-teatre.jpg",
+    "photoCredit": "Enric · CC BY-SA 4.0"
   },
   {
     "id": "quatre-gats",
@@ -290,7 +292,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38308&mlon=2.17735#map=18/41.38308/2.17735",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38308,2.17735"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38308,2.17735",
+    "photoSrc": "/places/llibreteria.jpg",
+    "photoCredit": "Enfo · CC BY-SA 3.0"
   },
   {
     "id": "watching-figure",
@@ -317,7 +321,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38520&mlon=2.17155#map=18/41.38520/2.17155",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38520,2.17155"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38520,2.17155",
+    "photoSrc": "/places/santa-anna-street.jpg",
+    "photoCredit": "pere prlpz · CC BY-SA 3.0"
   },
   {
     "id": "port-columbus",
@@ -371,7 +377,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38005&mlon=2.17515#map=18/41.38005/2.17515",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38005,2.17515"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38005,2.17515",
+    "photoSrc": "/places/placa-reial.jpg",
+    "photoCredit": "Olivier2000 · CC BY-SA 2.5"
   },
   {
     "id": "encarna-boarding",
@@ -398,7 +406,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38410&mlon=2.16920#map=18/41.38410/2.16920",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38410,2.16920"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38410,2.16920",
+    "photoSrc": "/places/santa-anna-street.jpg",
+    "photoCredit": "pere prlpz · CC BY-SA 3.0"
   },
   {
     "id": "cinema-aisle",
@@ -425,7 +435,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38720&mlon=2.16795#map=17/41.38720/2.16795",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38720,2.16795"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38720,2.16795",
+    "photoSrc": "/places/coliseum.jpg",
+    "photoCredit": "Bocachete · Public domain"
   },
   {
     "id": "university-cloister",
@@ -486,7 +498,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38135&mlon=2.16055#map=18/41.38135/2.16055",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38135,2.16055"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38135,2.16055",
+    "photoSrc": "/places/ronda-sant-antoni.jpg",
+    "photoCredit": "pere prlpz · CC BY-SA 3.0"
   },
   {
     "id": "aldaya-house",
@@ -554,7 +568,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38505&mlon=2.17055#map=18/41.38505/2.17055",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38505,2.17055"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38505,2.17055",
+    "photoSrc": "/places/santa-anna-street.jpg",
+    "photoCredit": "pere prlpz · CC BY-SA 3.0"
   },
   {
     "id": "nuria-apartment",
@@ -586,7 +602,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.37890&mlon=2.16720#map=17/41.37890/2.16720",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.37890,2.16720"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.37890,2.16720",
+    "photoSrc": "/places/raval.jpg",
+    "photoCredit": "Fred Romero · CC BY 2.0"
   },
   {
     "id": "investigation-cafe",
@@ -613,7 +631,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38330&mlon=2.17100#map=18/41.38330/2.17100",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38330,2.17100"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38330,2.17100",
+    "photoSrc": "/places/santa-anna-street.jpg",
+    "photoCredit": "pere prlpz · CC BY-SA 3.0"
   },
   {
     "id": "san-gabriel",
@@ -647,7 +667,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.39320&mlon=2.10280#map=16/41.39320/2.10280",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.39320,2.10280"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.39320,2.10280",
+    "photoSrc": "/places/pedralbes.jpg",
+    "photoCredit": "Bernard Gagnon · CC BY-SA 3.0"
   },
   {
     "id": "santa-lucia",
@@ -681,7 +703,9 @@
     "approximate": true,
     "background": false,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38415&mlon=2.18065#map=18/41.38415/2.18065",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38415,2.18065"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38415,2.18065",
+    "photoSrc": "/places/montcada.jpg",
+    "photoCredit": "Puigalder · CC BY-SA 3.0"
   },
   {
     "id": "aldaya-crypt",
@@ -710,7 +734,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.41355&mlon=2.13508#map=18/41.41355/2.13508",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.41355,2.13508"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.41355,2.13508",
+    "photoSrc": "/places/tibidabo-avenue.jpg",
+    "photoCredit": "Castellbo · CC BY-SA 4.0"
   },
   {
     "id": "aldaya-fountain",
@@ -739,7 +765,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.41368&mlon=2.13492#map=18/41.41368/2.13492",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.41368,2.13492"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.41368,2.13492",
+    "photoSrc": "/places/tibidabo-avenue.jpg",
+    "photoCredit": "Castellbo · CC BY-SA 4.0"
   },
   {
     "id": "aguilar-house",
@@ -769,7 +797,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.39150&mlon=2.16550#map=17/41.39150/2.16550",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.39150,2.16550"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.39150,2.16550",
+    "photoSrc": "/places/eixample.jpg",
+    "photoCredit": "pere prlpz · CC BY-SA 3.0"
   },
   {
     "id": "montjuic-cemetery",
@@ -825,7 +855,9 @@
     "fictional": true,
     "approximate": true,
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.39820&mlon=2.19140#map=16/41.39820/2.19140",
-    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.39820,2.19140"
+    "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.39820,2.19140",
+    "photoSrc": "/places/poblenou.jpg",
+    "photoCredit": "Tornel García · CC BY-SA 2.0"
   },
   {
     "id": "clinic-hospital",

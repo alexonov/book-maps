@@ -264,29 +264,35 @@ export function AppShell() {
             />
           ) : null}
 
-          <div className="absolute top-2 left-2 z-10 max-h-[42vh] max-w-[min(100%-4.5rem,24rem)] overflow-y-auto rounded-lg border border-[#c4a574]/25 bg-[#120e0b]/88 p-2.5 shadow-lg backdrop-blur-sm sm:top-3 sm:left-3 sm:max-h-none sm:p-3">
+          <div className="absolute top-2 left-2 z-10 max-h-[42vh] max-w-[min(100%-4.5rem,20rem)] overflow-y-auto rounded-lg border border-[#c4a574]/25 bg-[#120e0b]/88 p-2.5 shadow-lg backdrop-blur-sm sm:top-3 sm:left-3 sm:p-3">
             <Button
               variant="ghost"
               size="xs"
-              className="mb-2 text-[#c4a574] sm:hidden"
+              className="text-[#c4a574]"
               onClick={() => setFiltersOpen((open) => !open)}
             >
-              {filtersOpen ? "Hide filters" : "Characters & filters"}
+              {filtersOpen
+                ? "Hide people"
+                : activeCharacterIds.length > 0
+                  ? `People · ${activeCharacterIds.length} on`
+                  : "People"}
             </Button>
-            <div className={filtersOpen ? "block" : "hidden sm:block"}>
-              <CharacterFilters
-                characters={people}
-                selectedIds={activeCharacterIds}
-                onToggle={(id) =>
-                  setCharacterIds((current) =>
-                    current.includes(id)
-                      ? current.filter((item) => item !== id)
-                      : [...current, id],
-                  )
-                }
-                onClear={() => setCharacterIds([])}
-              />
-            </div>
+            {filtersOpen ? (
+              <div className="mt-2">
+                <CharacterFilters
+                  characters={people}
+                  selectedIds={activeCharacterIds}
+                  onToggle={(id) =>
+                    setCharacterIds((current) =>
+                      current.includes(id)
+                        ? current.filter((item) => item !== id)
+                        : [...current, id],
+                    )
+                  }
+                  onClear={() => setCharacterIds([])}
+                />
+              </div>
+            ) : null}
             <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-[#d7c7a8] sm:mt-3 sm:gap-4">
               <label className="flex items-center gap-2">
                 <Switch
