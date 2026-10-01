@@ -24,7 +24,7 @@ Reader progress is a beat id in the browser (`localStorage`). **I’ve read furt
 
 ## How the spoiler gate works
 
-Every beat, place, journey, and character has a `revealedIn` field pointing at a beat id. The UI filters with `src/lib/spoiler.ts` before anything reaches the map or inspector. A pin keeps a short gazetteer blurb; the story stays on the beat chip.
+Every beat, place, journey, and character has a `revealedIn` field pointing at a beat id. The UI filters with `src/lib/spoiler.ts` before anything reaches the map or inspector. A pin is a postcard: Catalan name, a still, one sentence of weather. The story stays on the beat chip.
 
 Unread beat titles stay hidden. Do not add teaser markers, silhouettes, or “??? still locked” pins.
 
@@ -53,7 +53,7 @@ Use real Barcelona positions. For invented interiors (Sempere & Sons, the Cemete
 
 ### Copy
 
-Write a short original gazetteer blurb — what the place is, not what happens there tonight. A few attributed words from the novel are fine; a paragraph of quotation is not. Beat titles must be safe to read only after that moment; never put a future title in the picker.
+Write one original sentence in the book’s weather — what the place is, not what happens there tonight, and not a note about the mapping. A few attributed words from the novel are fine; a paragraph of quotation is not. Beat titles must be safe to read only after that moment; never put a future title in the picker.
 
 ## Prompt for extending the dataset
 
@@ -75,7 +75,7 @@ Return JSON patches only (new or updated objects) matching src/data/types.ts for
 Rules:
 1. revealedIn must be a beat id from this chapter, or an earlier beat if the place already exists. Never a later id.
 2. Each beat needs chapterId, order, title (spoiler-safe once reached), placeLabel, moodLabel, yearLabel, currentLocationId, synopsis.
-3. If a place already has a pin, do not duplicate it. Leave the standing blurb timeless; do not stack scene notes on the card.
+3. If a place already has a pin, do not duplicate it. Do not add a second sentence or a scene note.
 4. No teaser pins, unnamed silhouettes, or “you will return here” copy.
 5. Blurbs: 1–3 original sentences. No long novel excerpts.
 6. Names: Catalan, Spanish, and English. Mark fictional vs real. Mark approximate coordinates.

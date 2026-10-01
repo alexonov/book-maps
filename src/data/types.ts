@@ -65,7 +65,6 @@ export type Location = {
   osmUrl?: string;
   /** Local still of a real building or the street a literary pin sits on. */
   photoSrc?: string;
-  photoCaption?: string;
   photoCredit?: string;
 };
 

@@ -41,7 +41,7 @@
       "palacios",
       "julian-child"
     ],
-    "blurb": "Father and son live above this modest second-hand bookshop on Santa Anna Street, between the Rambla and Portal de l’Àngel.",
+    "blurb": "A second-hand bookshop on Santa Anna, rooms above, between the Rambla and Portal de l’Àngel.",
     "address": "Carrer de Santa Anna (literary; no numbered shop survives)",
     "neighborhood": "Barri Gòtic",
     "fictional": true,
@@ -49,7 +49,6 @@
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38542&mlon=2.17192#map=18/41.38542/2.17192",
     "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38542,2.17192",
     "photoSrc": "/places/santa-anna-street.jpg",
-    "photoCaption": "Carrer de Santa Anna — the street, not a surviving shop.",
     "photoCredit": "pere prlpz · CC BY-SA 3.0"
   },
   {
@@ -68,7 +67,7 @@
       "daniel",
       "mr-sempere"
     ],
-    "blurb": "A Romanesque and Gothic church tucked just off Santa Anna Street, older than the shops around it.",
+    "blurb": "An old church just off the street, older than the shops around it.",
     "address": "Carrer de Santa Anna / Placeta de Ramon Amadeu",
     "neighborhood": "Barri Gòtic",
     "fictional": false,
@@ -134,7 +133,7 @@
       "bea",
       "julian-child"
     ],
-    "blurb": "A hidden labyrinth of unwanted books, known only to a few booksellers. The door is not on any plan.",
+    "blurb": "A labyrinth of unwanted books behind a door that is not on any plan.",
     "address": "Carrer de l’Arc del Teatre (traditional literary placement)",
     "neighborhood": "El Raval",
     "fictional": true,
@@ -161,7 +160,7 @@
       "mr-sempere",
       "barcelo"
     ],
-    "blurb": "A modernist café on Carrer de Montsió. In the book it is Barceló’s haunt, and the place Daniel’s parents once met.",
+    "blurb": "The café on Montsió where the painters used to drink, and where a bookseller once met his wife.",
     "address": "Carrer de Montsió, 3",
     "neighborhood": "Barri Gòtic",
     "fictional": false,
@@ -193,7 +192,7 @@
       "clara",
       "carax"
     ],
-    "blurb": "The Ateneo library on Carrer de la Canuda — a private house of books and reading rooms.",
+    "blurb": "A private house of books on Carrer de la Canuda.",
     "address": "Carrer de la Canuda, 6",
     "neighborhood": "Barri Gòtic",
     "fictional": false,
@@ -219,7 +218,7 @@
       "clara",
       "fumero"
     ],
-    "blurb": "The fortress on the hill above the port. The city remembers it as a prison.",
+    "blurb": "The fortress above the port. The city uses it as a prison.",
     "address": "Carretera de Montjuïc, 66",
     "neighborhood": "Montjuïc",
     "fictional": false,
@@ -256,7 +255,7 @@
       "bernarda",
       "neri"
     ],
-    "blurb": "A palatial flat looking onto Plaça Reial. The square is real; the apartment is literary.",
+    "blurb": "A palatial flat looking onto Plaça Reial.",
     "address": "Plaça Reial (literary apartment; the square is real)",
     "neighborhood": "Barri Gòtic",
     "fictional": true,
@@ -264,7 +263,6 @@
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38025&mlon=2.17535#map=18/41.38025/2.17535",
     "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38025,2.17535",
     "photoSrc": "/places/placa-reial.jpg",
-    "photoCaption": "Plaça Reial — the square, not the flat.",
     "photoCredit": "Olivier2000 · CC BY-SA 2.5"
   },
   {
@@ -286,7 +284,7 @@
       "daniel",
       "mr-sempere"
     ],
-    "blurb": "A stationer’s window on Baixada de la Llibreteria. Walking tours point at a real shop; the novel never numbers it.",
+    "blurb": "A stationer’s window on Baixada de la Llibreteria.",
     "address": "Baixada de la Llibreteria, 2 (traditional identification with Papirum)",
     "neighborhood": "Barri Gòtic",
     "fictional": true,
@@ -313,7 +311,7 @@
       "daniel",
       "stranger"
     ],
-    "blurb": "The stretch of Santa Anna Street just outside the shop.",
+    "blurb": "The stretch of Santa Anna just outside the shop.",
     "address": "Carrer de Santa Anna, near the bookshop",
     "neighborhood": "Barri Gòtic",
     "fictional": true,
@@ -367,7 +365,7 @@
       "daniel",
       "fermin"
     ],
-    "blurb": "Under the arcade of Plaça Reial, among the doorways that face the palms.",
+    "blurb": "Under the arcade, among the doorways that face the palms.",
     "address": "Plaça Reial, under the arcade",
     "neighborhood": "Barri Gòtic",
     "fictional": true,
@@ -394,7 +392,7 @@
       "mr-sempere",
       "fermin"
     ],
-    "blurb": "A boarding house near Santa Anna. The novel gives no number and keeps one room off the register.",
+    "blurb": "A boarding house near Santa Anna, one room kept off the register.",
     "address": "Near Santa Anna (literary boarding house; no number in the novel)",
     "neighborhood": "Barri Gòtic",
     "fictional": true,
@@ -421,7 +419,7 @@
       "fermin",
       "coubert"
     ],
-    "blurb": "A picture house in the old centre. The novel never names the screen.",
+    "blurb": "A picture house in the old centre.",
     "address": "A picture house in the old centre (the novel does not name the screen)",
     "neighborhood": "Eixample / Gòtic edge",
     "fictional": true,
@@ -449,7 +447,7 @@
       "daniel",
       "bea"
     ],
-    "blurb": "The historic university on Gran Via, with a cloister behind the street front.",
+    "blurb": "The old university on Gran Via, a cloister behind the street.",
     "address": "Gran Via de les Corts Catalanes, 585",
     "neighborhood": "Eixample",
     "fictional": false,
@@ -482,7 +480,7 @@
       "sophie",
       "penelope"
     ],
-    "blurb": "The novel puts a hat shop on Ronda de Sant Antoni, at Plaça Goya. The shop itself is invented.",
+    "blurb": "A hat shop on Ronda de Sant Antoni, at Plaça Goya.",
     "address": "Ronda de Sant Antoni / Plaça Goya, 15 (address in the novel; the shop is fictional)",
     "neighborhood": "Sant Antoni",
     "fictional": true,
@@ -520,7 +518,7 @@
       "jacinta",
       "miquel"
     ],
-    "blurb": "A gated house on Avinguda del Tibidabo. The number is in the novel; the household is not.",
+    "blurb": "A gated house on Avinguda del Tibidabo.",
     "address": "Avinguda del Tibidabo, 32 (the number is in the novel; the household is fictional)",
     "neighborhood": "Sant Gervasi",
     "fictional": true,
@@ -528,7 +526,6 @@
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.41360&mlon=2.13500#map=18/41.41360/2.13500",
     "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.41360,2.13500",
     "photoSrc": "/places/tibidabo-avenue.jpg",
-    "photoCaption": "Avinguda del Tibidabo — the avenue, not the household.",
     "photoCredit": "Castellbo · CC BY-SA 4.0"
   },
   {
@@ -551,7 +548,7 @@
       "federico",
       "fumero"
     ],
-    "blurb": "A neighbourhood watchmaker near Santa Anna. The novel gives no number.",
+    "blurb": "A neighbourhood watchmaker near Santa Anna.",
     "address": "Near Santa Anna (literary shop; no number)",
     "neighborhood": "Barri Gòtic",
     "fictional": true,
@@ -583,7 +580,7 @@
       "nuria",
       "miquel"
     ],
-    "blurb": "A shabby courtyard building in the Raval. Two names share a mailbox; the novel gives no street number.",
+    "blurb": "A shabby courtyard in the Raval, two names on a mailbox.",
     "address": "A working-class courtyard (the novel gives no street number)",
     "neighborhood": "El Raval",
     "fictional": true,
@@ -610,7 +607,7 @@
       "daniel",
       "fermin"
     ],
-    "blurb": "An unnamed café near the shop — a table before a longer journey.",
+    "blurb": "A café near the shop.",
     "address": "Near the shop (unnamed café)",
     "neighborhood": "Barri Gòtic",
     "fictional": true,
@@ -644,7 +641,7 @@
       "fumero",
       "penelope"
     ],
-    "blurb": "A worn Gothic school outside the old city. The school is invented; the pin is a hillside stand-in.",
+    "blurb": "A worn Gothic school outside the old city.",
     "address": "Outside the old city (fictional school; pin is a hillside stand-in)",
     "neighborhood": "Pedralbes",
     "fictional": true,
@@ -677,7 +674,7 @@
       "fermin",
       "fumero"
     ],
-    "blurb": "A hospice the book names, placed here on Carrer de Montcada. The building is literary.",
+    "blurb": "A hospice on Carrer de Montcada.",
     "address": "Carrer de Montcada (literary placement for a hospice the novel names; they have not gone in)",
     "neighborhood": "El Born",
     "fictional": true,
@@ -707,7 +704,7 @@
       "penelope",
       "coubert"
     ],
-    "blurb": "Under the house on Avinguda del Tibidabo — a cellar the novel treats as a family vault.",
+    "blurb": "A cellar under the house on Tibidabo.",
     "address": "Under the house at Avinguda del Tibidabo, 32",
     "neighborhood": "Sant Gervasi",
     "fictional": true,
@@ -736,7 +733,7 @@
       "fumero",
       "carax"
     ],
-    "blurb": "A dry fountain in that garden, with a stone angel in the basin.",
+    "blurb": "A dry fountain in that garden, a stone angel in the basin.",
     "address": "Garden of Avinguda del Tibidabo, 32",
     "neighborhood": "Sant Gervasi",
     "fictional": true,
@@ -766,7 +763,7 @@
       "tomas",
       "pablo"
     ],
-    "blurb": "A respectable Eixample flat. The novel gives no number.",
+    "blurb": "A respectable flat in the Eixample.",
     "address": "Eixample (literary house; the novel gives no number)",
     "neighborhood": "Eixample",
     "fictional": true,
@@ -793,7 +790,7 @@
       "nuria",
       "palacios"
     ],
-    "blurb": "The municipal cemetery on the south slope of Montjuïc.",
+    "blurb": "The cemetery on the south slope of the hill.",
     "address": "Cemeteri de Montjuïc",
     "neighborhood": "Montjuïc",
     "fictional": false,
@@ -822,7 +819,7 @@
       "nuria",
       "coubert"
     ],
-    "blurb": "A publisher’s warehouse toward the docks. The novel gives no number.",
+    "blurb": "A publisher’s warehouse toward the docks.",
     "address": "The docks / Poblenou (literary warehouse; no number)",
     "neighborhood": "Poblenou",
     "fictional": true,
@@ -851,7 +848,7 @@
       "fermin",
       "carax"
     ],
-    "blurb": "A hospital in the Eixample. Hospital Clínic stands here; the novel does not name the ward.",
+    "blurb": "A white hospital in the Eixample.",
     "address": "Carrer de Villarroel, 170 (a real hospital; the novel does not name the ward)",
     "neighborhood": "Eixample",
     "fictional": true,
@@ -859,7 +856,6 @@
     "osmUrl": "https://www.openstreetmap.org/?mlat=41.38890&mlon=2.15190#map=17/41.38890/2.15190",
     "streetViewUrl": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=41.38890,2.15190",
     "photoSrc": "/places/hospital-clinic.jpg",
-    "photoCaption": "Hospital Clínic — a real hospital; the novel does not name the ward.",
     "photoCredit": "Jordiferrer · CC BY-SA 3.0"
   }
 ]

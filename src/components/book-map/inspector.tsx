@@ -1,38 +1,36 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import type { Beat, Chapter, Character, Location } from "@/data/types";
-import { beatById, chapterById } from "@/lib/beats";
-import { MARKER_LABELS } from "@/lib/markers";
-import { ExternalLink, MapPin, X } from "lucide-react";
+import type { Location } from "@/data/types";
+import { ExternalLink, X } from "lucide-react";
 import Image from "next/image";
 
 type InspectorProps = {
   location: Location | null;
-  beats: Beat[];
-  chapters: Chapter[];
-  characters: Character[];
   currentSynopsis: string;
-  momentCaption: string | null;
+  stamp: string | null;
   visibleCount: number;
   isCurrent: boolean;
+  isSetting: boolean;
   walkBack: boolean;
   showPhoto: boolean;
   onClear: () => void;
   onMarkHere: (locationId: string) => void;
 };
 
+function streetLine(location: Location) {
+  const street = location.address?.replace(/\s*\(.*$/, "").trim();
+  if (street && location.neighborhood) return `${street}, ${location.neighborhood}`;
+  return street || location.neighborhood || "";
+}
+
 export function Inspector({
   location,
-  beats,
-  chapters,
-  characters,
   currentSynopsis,
-  momentCaption,
+  stamp,
   visibleCount,
   isCurrent,
+  isSetting,
   walkBack,
   showPhoto,
   onClear,
@@ -40,179 +38,124 @@ export function Inspector({
 }: InspectorProps) {
   if (!location) {
     return (
-      <div className="flex flex-col gap-4 p-5">
-        <h2 className="font-serif text-2xl leading-snug text-[#f0e6d4]">
-          Choose a pin
-        </h2>
-        <p className="text-sm leading-relaxed text-[#c4b49a]">
-          Nothing beyond this moment is on the map — not greyed out, not hinted
-          at. {visibleCount}{" "}
-          {visibleCount === 1 ? "place is" : "places are"} known to you so far.
-        </p>
-        <Separator className="bg-[#c4a574]/20" />
-        <p className="font-serif text-base leading-relaxed text-[#e4d5b8]">
+      <div className="flex flex-col gap-5 p-5">
+        {stamp ? (
+          <p className="font-[family-name:var(--font-cinzel)] text-[0.7rem] tracking-[0.22em] text-[#c4a574] uppercase">
+            {stamp}
+          </p>
+        ) : null}
+        <p className="font-serif text-2xl leading-snug text-[#f0e6d4]">
           {currentSynopsis}
+        </p>
+        <p className="text-sm text-[#9a8b73]">
+          {visibleCount}{" "}
+          {visibleCount === 1 ? "place" : "places"} on the map so far.
         </p>
       </div>
     );
   }
 
-  const revealedAt = beatById(beats, location.revealedIn);
-  const revealedChapter = revealedAt
-    ? chapterById(chapters, revealedAt.chapterId)
-    : undefined;
-  const visiblePeople = characters.filter((character) =>
-    location.characterIds.includes(character.id),
+  const street = streetLine(location);
+  const otherNames = [location.names.en, location.names.es].filter(
+    (name, index, all) => name && name !== location.names.ca && all.indexOf(name) === index,
   );
 
   return (
     <div className="flex flex-col">
-      <div className="sticky top-0 z-10 flex items-start justify-between gap-3 bg-[#1a1410]/95 px-5 pt-5 pb-3 backdrop-blur-sm">
-        <div className="min-w-0">
-          <p className="text-[0.68rem] tracking-[0.28em] text-[#c4a574] uppercase">
-            {MARKER_LABELS[location.type]}
-          </p>
-          <h2 className="mt-1 font-serif text-2xl leading-tight text-[#f0e6d4]">
-            {location.names.en}
-          </h2>
-          {momentCaption ? (
-            <p className="mt-1 text-[0.68rem] tracking-[0.18em] text-[#e8c989] uppercase">
-              {momentCaption}
-            </p>
-          ) : null}
-        </div>
+      <div className="relative">
+        {showPhoto && location.photoSrc ? (
+          <div className="relative">
+            <Image
+              key={location.id}
+              src={location.photoSrc}
+              alt={location.names.ca}
+              width={960}
+              height={640}
+              className="h-52 w-full object-cover lg:h-56"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#120e0b] via-[#120e0b]/70 to-transparent px-5 pt-16 pb-3">
+              <h2 className="font-serif text-[1.65rem] leading-tight text-[#f0e6d4]">
+                {location.names.ca}
+              </h2>
+            </div>
+          </div>
+        ) : (
+          <div className="px-5 pt-5 pr-14">
+            <h2 className="font-serif text-[1.65rem] leading-tight text-[#f0e6d4]">
+              {location.names.ca}
+            </h2>
+          </div>
+        )}
         <Button
           variant="ghost"
           size="icon-sm"
           onClick={onClear}
           aria-label="Close details"
-          className="shrink-0 text-[#c4b49a] hover:text-[#f0e6d4]"
+          className="absolute top-3 right-3 bg-[#120e0b]/55 text-[#c4b49a] hover:bg-[#120e0b]/80 hover:text-[#f0e6d4]"
         >
           <X />
         </Button>
       </div>
 
-      <div className="flex flex-col gap-4 px-5 pb-6">
-        <div className="space-y-1 text-sm text-[#d7c7a8]">
-          <p>
-            <span className="text-[#c4a574]">Catalan · </span>
-            {location.names.ca}
-          </p>
-          <p>
-            <span className="text-[#c4a574]">Spanish · </span>
-            {location.names.es}
-          </p>
-        </div>
-
-        <div className="flex flex-wrap gap-1.5">
-          {location.fictional ? (
-            <Badge variant="outline">Literary place</Badge>
-          ) : (
-            <Badge variant="outline">Real Barcelona</Badge>
-          )}
-          {location.approximate ? (
-            <Badge variant="secondary">Approximate</Badge>
-          ) : null}
-          {location.background ? (
-            <Badge variant="secondary">Background</Badge>
-          ) : null}
-          {isCurrent ? (
-            <Badge>Current setting</Badge>
-          ) : (
-            <Badge variant="secondary">
-              {walkBack ? "As of that visit" : "Visited"}
-            </Badge>
-          )}
-        </div>
-
-        {showPhoto && location.photoSrc ? (
-          <figure className="-mx-5">
-            <Image
-              src={location.photoSrc}
-              alt={location.photoCaption ?? location.names.en}
-              width={960}
-              height={640}
-              className="h-44 w-full object-cover"
-            />
-            <figcaption className="mt-1.5 px-5 text-[0.7rem] leading-relaxed text-[#9a8b73]">
-              {location.photoCaption ? `${location.photoCaption} ` : null}
-              {location.photoCredit ? (
-                <span>Photo: {location.photoCredit}</span>
-              ) : null}
-            </figcaption>
-          </figure>
+      <div className="flex flex-col gap-4 px-5 pt-3 pb-6">
+        {otherNames.length > 0 ? (
+          <p className="text-sm text-[#9a8b73]">{otherNames.join(" · ")}</p>
         ) : null}
 
-        {location.address ? (
-          <p className="flex items-start gap-2 text-sm text-[#c4b49a]">
-            <MapPin className="mt-0.5 size-3.5 shrink-0" />
-            <span>
-              {location.address}
-              {location.neighborhood ? ` · ${location.neighborhood}` : ""}
-            </span>
+        {isSetting && stamp ? (
+          <p className="font-[family-name:var(--font-cinzel)] text-[0.7rem] tracking-[0.22em] text-[#e8c989] uppercase">
+            {stamp}
           </p>
         ) : null}
 
-        <p className="font-serif text-base leading-relaxed text-[#f0e6d4]">
+        <p className="font-serif text-lg leading-relaxed text-[#f0e6d4]">
           {location.blurb}
         </p>
 
         {!walkBack && !isCurrent ? (
-          <Button
-            size="sm"
-            variant="outline"
-            className="self-start border-[#c4a574]/40 text-[#e8c989]"
+          <button
+            type="button"
             onClick={() => onMarkHere(location.id)}
+            className="self-start text-sm text-[#e8c989] underline-offset-4 hover:underline"
           >
             I am here
-          </Button>
+          </button>
         ) : null}
 
-        <Separator className="bg-[#c4a574]/20" />
-
-        <div>
-          <p className="text-[0.68rem] tracking-[0.22em] text-[#c4a574] uppercase">
-            First appears
+        <div className="mt-1 space-y-1.5 border-t border-[#c4a574]/15 pt-4 text-[0.7rem] leading-relaxed text-[#7d705c]">
+          <p>
+            {street ? `${street}. ` : null}
+            {location.fictional ? "Literary. " : null}
+            {location.approximate ? "Unnumbered. " : null}
+            {location.background ? "Heard of, not walked. " : null}
           </p>
-          <p className="mt-1 text-sm text-[#e4d5b8]">
-            {revealedAt
-              ? `${revealedChapter?.part ?? ""} — ${revealedAt.title}`
-              : "Unknown moment"}
-          </p>
-        </div>
-
-        <div>
-          <p className="text-[0.68rem] tracking-[0.22em] text-[#c4a574] uppercase">
-            People named here
-          </p>
-          {visiblePeople.length === 0 ? (
-            <p className="mt-1 text-sm text-[#c4b49a]">
-              No named characters here yet.
-            </p>
-          ) : (
-            <p className="mt-1 text-sm text-[#e4d5b8]">
-              {visiblePeople.map((person) => person.name).join(" · ")}
-            </p>
-          )}
-        </div>
-
-        <div className="flex flex-col gap-2 pt-1">
-          {location.osmUrl ? (
-            <Button variant="outline" size="sm" className="justify-start" asChild>
-              <a href={location.osmUrl} target="_blank" rel="noreferrer">
-                <ExternalLink />
-                Open in OpenStreetMap
+          <p className="flex flex-wrap gap-x-3 gap-y-1">
+            {location.osmUrl ? (
+              <a
+                href={location.osmUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 hover:text-[#c4b49a]"
+              >
+                <ExternalLink className="size-3" />
+                Map
               </a>
-            </Button>
-          ) : null}
-          {location.streetViewUrl ? (
-            <Button variant="ghost" size="sm" className="justify-start" asChild>
-              <a href={location.streetViewUrl} target="_blank" rel="noreferrer">
-                <ExternalLink />
-                Look at the street
+            ) : null}
+            {location.streetViewUrl ? (
+              <a
+                href={location.streetViewUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 hover:text-[#c4b49a]"
+              >
+                <ExternalLink className="size-3" />
+                Street
               </a>
-            </Button>
-          ) : null}
+            ) : null}
+            {showPhoto && location.photoCredit ? (
+              <span>Photo {location.photoCredit}</span>
+            ) : null}
+          </p>
         </div>
       </div>
     </div>

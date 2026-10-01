@@ -102,10 +102,9 @@ export function AppShell() {
   const currentJourneyId =
     catalog.journeys.find((journey) => journey.revealedIn === progressId)?.id ??
     null;
-  const momentCaption =
-    selected && selected.id === focusLocationId && currentBeat
-      ? `${walkBack ? "Then" : "Now"} · ${currentBeat.title}`
-      : null;
+  const stamp = currentBeat
+    ? [currentBeat.moodLabel, currentBeat.yearLabel].filter(Boolean).join(" · ")
+    : null;
 
   function commit(
     next: ProgressState,
@@ -178,15 +177,13 @@ export function AppShell() {
   const inspector = (
     <Inspector
       location={selected}
-      beats={catalog.beats}
-      chapters={catalog.chapters}
-      characters={people}
       currentSynopsis={currentBeat?.synopsis ?? ""}
-      momentCaption={momentCaption}
+      stamp={stamp}
       visibleCount={places.length}
       isCurrent={selected?.id === focusLocationId && !walkBack}
+      isSetting={selected?.id === focusLocationId}
       walkBack={walkBack}
-      showPhoto={!isMobile}
+      showPhoto
       onClear={() => {
         setSelectedId(null);
         setMobileOpen(false);
